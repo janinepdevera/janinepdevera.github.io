@@ -1,4 +1,4 @@
-This repository is for my githubio page. Please have a look at janinepdevera.github.io
+This repository is for my github.io page. Please have a look at janinepdevera.github.io
 
 
 Credits:
