@@ -1,0 +1,13 @@
+---
+title: " "
+about:
+  template: jolla
+  image: profile.JPG
+---
+
+I am an economic researcher and trained data scientist with a MSc degree in Data Science for Public Policy from the Hertie School of Governance in Berlin. I have over five years of professional experience in data analysis and quantitative research. My recent work focuses on applications of Natural Language Processing in development and competition policy. 
+<br><br>
+
+<a href="https://github.com/janinepdevera">{{< fa brands github size=2x >}}</a> &nbsp;&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/janinepdevera/">{{< fa brands linkedin size=2x >}}</a> &nbsp;&nbsp;&nbsp;
+<a href="https://www.hertie-school.org/en/cv-books/cv-book-2023/cv-book/student/de-vera">{{< fa building-columns size=2x >}}</a> 
