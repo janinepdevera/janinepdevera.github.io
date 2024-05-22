@@ -1,8 +1,6 @@
 # extensions
 _extensions
-_site
 
 # others
 .quarto
-*.css
 *.JPG
