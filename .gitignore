@@ -1,6 +1,8 @@
-# extensions
+# site files
+/.quarto/
 _extensions
+.DS_Store
 
-# others
-.quarto
-*.JPG
+# source code
+*.qmd
+*.yml
