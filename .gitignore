@@ -2,6 +2,8 @@
 /.quarto/
 _extensions
 .DS_Store
+.JPG
+*.css
 
 # source code
 *.qmd
