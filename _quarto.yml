@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Janine De Vera"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: portfolio.qmd
+        text: Portfolio
+      - href: datasets.qmd
+        text: Datasets
+      - href: contact.qmd
+        text: Contact
+
+format:
+  html:
+    theme: themes/ek-theme.scss
+    css: styles.css

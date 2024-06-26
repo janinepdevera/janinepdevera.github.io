@@ -1,0 +1,11 @@
+---
+title: "Climate"
+description: | 
+    Sample sample sample
+format: html
+image: image.png
+---
+
+![Image](image.png)
+
+ 

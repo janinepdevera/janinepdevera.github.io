@@ -1,0 +1,14 @@
+---
+title: ""
+listing: 
+  contents: datasets
+  type: grid
+  sort-ui: false
+  filter-ui: false 
+  image-height: 280px
+page-layout: full
+title-block-banner: false
+---
+
+# [Datasets]{.third-color}
+Clean, high-quality data can be hard to come by, so I've gathered some datasets I personally scraped and processed. If you find any of them useful, feel free to reach out!  <a class='third-icon' href=contact.qmd>{{< fa solid envelope >}}</a>

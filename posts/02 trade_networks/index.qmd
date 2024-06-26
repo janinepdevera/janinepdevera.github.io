@@ -1,0 +1,8 @@
+---
+title: "Trade Networks"
+format: html
+image: network.gif
+---
+
+
+![Network](network.gif)

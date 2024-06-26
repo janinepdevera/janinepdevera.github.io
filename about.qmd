@@ -1,0 +1,32 @@
+---
+title: ""
+about:
+  template: jolla
+  image: profile.JPG
+---
+
+# [About]{.primary}
+
+::: {.grid}
+
+::: {.g-col-12}
+
+Welcome to my personal website! My name is Janine and I am a **data scientist** and **economic researcher** based in **Berlin, Germany**. I hold a MSc in Data Science from **Hertie School** and a BS in Economics from the University of the Philippines. I have **over seven years** of professional experience in quantitative data analysis with organizations such as the Asian Development Bank, the United Nations Development Programme, and the Philippine Competition Commission.
+
+I specialize in **Natural Language Processing (NLP)** for public policy with a focus on text classification and named entity recognition in domain-specific text. This has use cases ranging from the [detection of anti-competitive provisions in draft legislation](posts/thesis/index.qmd) to the parsing of SDG compliance reports. As most human data is textual in nature, I believe **NLP is key to understanding the world we live in**.
+
+My programming language of choice is 
+<span style='display: inline-block;'>Python {{< fa brands python >}}</span> and I have some familiarity with SQL.
+
+![](images/about1.jpg){width=75%}
+
+In my past work, I have traveled to countries like Kazakhstan and Türkiye to conduct workshops with government officials on national accounting and input-output global value chain analysis.
+
+Outside of work, I am an aerial arts and pole dance enthusiast.
+
+![](images/about2.jpg){width=90%}
+
+:::
+
+:::
+

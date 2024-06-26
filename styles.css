@@ -1,0 +1,103 @@
+/* css styles */
+
+/* sections */
+
+section#about p {
+    font-size: 18px;
+}
+
+section#datasets p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+section#datasets ~ div h5.no-anchor.card-title.listing-title:hover {
+    color: #FCB7B4;
+}
+
+section#portfolio p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+section#portfolio ~ div h5.no-anchor.card-title.listing-title:hover {
+    color: #F28A64;
+}
+
+section#lets-connect p {
+    font-size: 18px;
+}
+
+/* cards for posts */
+
+.card-text.listing-description p {
+    margin-bottom: 0px;
+}
+
+/* posts */
+
+h5.listing-title {
+    fill: black;
+    opacity: 1;
+}
+
+h5.no-anchor.card-title.listing-title {
+    margin-bottom: 10px;
+}
+
+.content li {
+    font-size: 15px;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title h1.title {
+    font-size: 30px;
+}
+
+#title-block-header.quarto-title-block.default .description>p {
+    font-size: 18px;
+}
+
+#title-block-header.quarto-title-block.default .description>p:last-of-type {
+    margin-bottom: 20px;
+}
+
+#quarto-document-content p {
+    font-size: 15px;
+}
+
+.description>p {
+    margin-top: 10px;
+}
+
+.table {
+    font-size: 15px;
+}
+
+/* general */
+
+body {
+    color: black;
+}
+
+.profile {
+    font-size: 25px;
+}
+
+.location {
+    font-size: 18px;
+    color: gray;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.profile-image p {
+    margin: 0 0 0 0;
+}
+
+.sourceCode {
+    font-size: 12px;
+}
+
+.cell summary {
+    font-size: 15px; 
+}

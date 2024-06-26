@@ -1,0 +1,11 @@
+---
+title: ""
+about:
+  template: jolla
+---
+
+I'd love to hear from you! 
+
+<a href="https://github.com/janinepdevera">{{< fa brands github size=2x >}}</a> &nbsp;&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/janinepdevera/">{{< fa brands linkedin size=2x >}}</a> &nbsp;&nbsp;&nbsp;
+<a href="https://www.hertie-school.org/en/cv-books/cv-book-2023/cv-book/student/de-vera">{{< fa building-columns size=2x >}}</a> 

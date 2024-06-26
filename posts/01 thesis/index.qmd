@@ -1,0 +1,28 @@
+---
+title: "Using AI to Detect Anti-Competitive Legislation"
+description: | 
+    I build a legal text classifier that correctly identifies 97% of paragraphs with potentially problematic provisions.
+format: html
+image: main.gif
+---
+
+![](main.jpg)
+
+Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new policies for anti-competitive provisions. But this is a time-consuming exercise: an initial review alone can take 2-4 months, according to an OECD representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment (CIA) is great. Indeed, having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand knowledge of how such undertakings can severely strain resources.
+
+Recent years have shown that AI, particularly large language models, can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master's thesis. AI is no replacement for an expert's thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.
+
+For my model, I use a database of legislative documents in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7335 unique paragraphs of which 2104 have been manually assigned by the OECD into one of 4 categories identified in its CIA Checklist:
+
+A
+B
+C
+D
+
+My outcome variable is either one of these categories or "None". I train my model on the labeled data and ...
+
+[Further description of methodology]
+
+[Results: binary classifier, full classifier]
+
+The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of deep learning models, the time spent on repetitive can be greatly reduced, allowing human minds to focus on deeper analytical tasks.
