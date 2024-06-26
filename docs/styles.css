@@ -58,7 +58,7 @@ h5.no-anchor.card-title.listing-title {
 }
 
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
-    margin-bottom: 20px;
+    margin-bottom: 3em;
 }
 
 #quarto-document-content p {
