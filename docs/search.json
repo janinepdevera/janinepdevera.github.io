@@ -4,21 +4,21 @@
     "href": "index.html",
     "title": "Janine De Vera",
     "section": "",
-    "text": "I am an economic researcher and trained data scientist with a MSc degree in Data Science for Public Policy from the Hertie School of Governance in Berlin. I have over five years of professional experience in data analysis and quantitative research. My recent work focuses on applications of Natural Language Processing in development and competition policy."
+    "text": "Hello, my name is Janine   Data Scientist and Economic Researcher  Berlin, Germany\n\n\n\n\n\nAbout me, my interests, and my work as a data scientist and researcher\n\n\nABOUT\n\n\n\n\n\n\n\n\nShort posts about pasts projects and current research interests\n\n\nPORTFOLIO\n\n\n\n\n\n\n\n\nDatasets I’ve processed and made available for public use\n\n\nDATASETS\n\n\n\n\n\n\n\n\nWhere to find me online. Would love to get in touch!\n\n\nCONTACT"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Janine De Vera",
+    "title": "About",
     "section": "",
-    "text": "I am an economic researcher and trained data scientist with a MSc degree in Data Science for Public Policy from the Hertie School of Governance in Berlin. I have over five years of professional experience in data analysis and quantitative research. My recent work focuses on applications of Natural Language Processing in development and competition policy."
+    "text": "About\n\n\nWelcome to my personal website! My name is Janine and I am a data scientist and economic researcher based in Berlin, Germany. I hold a MSc in Data Science from Hertie School and a BS in Economics from the University of the Philippines. I have over seven years of professional experience in quantitative data analysis with organizations such as the Asian Development Bank, the United Nations Development Programme, and the Philippine Competition Commission.\nI specialize in Natural Language Processing (NLP) for public policy with a focus on text classification and named entity recognition in domain-specific text. This has use cases ranging from the detection of anti-competitive provisions in draft legislation to the parsing of SDG compliance reports. As most human data is textual in nature, I believe NLP is key to understanding the world we live in.\nMy programming language of choice is Python  and I have some familiarity with SQL.\n\nIn my past work, I have traveled to countries like Kazakhstan and Türkiye to conduct workshops with government officials on national accounting and input-output global value chain analysis.\nOutside of work, I am an aerial arts and pole dance enthusiast."
   },
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
-    "title": "Janine De Vera",
-    "section": "Education",
-    "text": "Education\nMSc Data Science for Public Policy  Hertie School, 2021-2023  Berlin, Germany \nBS Business Economics  University of the Philippines Diliman, 2010-2014  Manila, Philippines"
+    "title": "About Me",
+    "section": "",
+    "text": "MSc Data Science for Public Policy  Hertie School, 2021-2023  Berlin, Germany \nBS Business Economics  University of the Philippines Diliman, 2010-2014  Manila, Philippines"
   },
   {
     "objectID": "about.html#experience",
@@ -26,5 +26,124 @@
     "title": "Janine De Vera",
     "section": "Experience",
     "text": "Experience"
+  },
+  {
+    "objectID": "portfolio.html",
+    "href": "portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Portfolio\nSome description here\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClimate\n\n\nSample sample sample\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrade Networks\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing AI to Detect Anti-Competitive Legislation\n\n\nI build a legal text classifier that correctly identifies 97% of paragraphs with potentially problematic provisions.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/thesis.html",
+    "href": "posts/thesis.html",
+    "title": "Thesis",
+    "section": "",
+    "text": "Insert text here"
+  },
+  {
+    "objectID": "posts/post1.html",
+    "href": "posts/post1.html",
+    "title": "Post 1",
+    "section": "",
+    "text": "Hello"
+  },
+  {
+    "objectID": "posts/post1/post1.html",
+    "href": "posts/post1/post1.html",
+    "title": "Post 1",
+    "section": "",
+    "text": "Hello"
+  },
+  {
+    "objectID": "posts/04 climate/index.html",
+    "href": "posts/04 climate/index.html",
+    "title": "Climate",
+    "section": "",
+    "text": "Image"
+  },
+  {
+    "objectID": "posts/02 trade_networks/index.html",
+    "href": "posts/02 trade_networks/index.html",
+    "title": "Trade Networks",
+    "section": "",
+    "text": "Network"
+  },
+  {
+    "objectID": "posts/01 thesis/index.html",
+    "href": "posts/01 thesis/index.html",
+    "title": "Using AI to Detect Anti-Competitive Legislation",
+    "section": "",
+    "text": "Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new policies for anti-competitive provisions. But this is a time-consuming exercise: an initial review alone can take 2-4 months, according to an OECD representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment (CIA) is great. Indeed, having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand knowledge of how such undertakings can severely strain resources.\nRecent years have shown that AI, particularly large language models, can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master’s thesis. AI is no replacement for an expert’s thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.\nFor my model, I use a database of legislative documents in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7335 unique paragraphs of which 2104 have been manually assigned by the OECD into one of 4 categories identified in its CIA Checklist:\nA B C D\nMy outcome variable is either one of these categories or “None”. I train my model on the labeled data and …\n[Further description of methodology]\n[Results: binary classifier, full classifier]\nThe applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of deep learning models, the time spent on repetitive can be greatly reduced, allowing human minds to focus on deeper analytical tasks."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Let’s connect!",
+    "section": "",
+    "text": "Let’s connect!\nHere’s where you can find me online:\n          \nYou can also drop me an e-mail at janinepdevera@gmail.com"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Janine De Vera",
+    "section": "",
+    "text": "MSc Data Science for Public Policy  Hertie School, 2021-2023  Berlin, Germany \nBS Business Economics  University of the Philippines Diliman, 2010-2014  Manila, Philippines"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Janine De Vera",
+    "section": "",
+    "text": "MSc Data Science for Public Policy  Hertie School, 2021-2023  Berlin, Germany \nBS Business Economics  University of the Philippines Diliman, 2010-2014  Manila, Philippines"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Janine De Vera",
+    "section": "Experience",
+    "text": "Experience"
+  },
+  {
+    "objectID": "posts/03 climate/index.html",
+    "href": "posts/03 climate/index.html",
+    "title": "Climate",
+    "section": "",
+    "text": "Image"
+  },
+  {
+    "objectID": "datasets.html",
+    "href": "datasets.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "Datasets\nClean, high-quality data can be hard to come by, so I’ve gathered some datasets I personally scraped and processed. If you find any of them useful, feel free to reach out! \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEU Communications on Digital Economy\n\n\nI scraped the European Union Press Corner to extract communication materials related to platform regulation and digital economy.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEU Communications on Digital Economy\n\n\nI scraped the European Union Press Corner to extract communication materials related to platform regulation and digital economy.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "datasets.html#education",
+    "href": "datasets.html#education",
+    "title": "Janine De Vera",
+    "section": "",
+    "text": "MSc Data Science for Public Policy  Hertie School, 2021-2023  Berlin, Germany \nBS Business Economics  University of the Philippines Diliman, 2010-2014  Manila, Philippines"
+  },
+  {
+    "objectID": "datasets.html#experience",
+    "href": "datasets.html#experience",
+    "title": "Janine De Vera",
+    "section": "Experience",
+    "text": "Experience"
+  },
+  {
+    "objectID": "datasets/01 dsa/index.html",
+    "href": "datasets/01 dsa/index.html",
+    "title": "EU Communications on Digital Economy",
+    "section": "",
+    "text": "Digital platforms such as Google, Amazon, and Facebook play a crucial role in today’s technology-driven era. The increasing presence and necessity of digital innovation in our daily lives has prompted governments worldwide to actively regulate platform activities in an effort to prevent and address perceived risks and harms.\nThe European Union is a global leader in this regulatory effort, enacting landmark legislation like the Digital Services Act (DSA) and the Digital Markets Act (DMA). Among other things, these regulations aim to safeguard consumer welfare, address issues concerning data privacy and misinformation, and promote healthy market competition. The European Commission communicates these initiatives to various stakeholders through comprehensive documentation available on the EU Press Corner. The archive comprises a wide variety of press materials like speeches, statements, news articles, and factsheets on the digital policy discourse.\nThe information contained in these documents can be used to explore and answer different policy questions. For example, determining the focus of the EU’s digital strategy through topic modeling, understanding how digital policy issues are communicated through sentiment analysis, or identifying key players and stakeholders through named entity recognition.\nWith the goal of using communication materials to analyze EU digital policy, I scraped the EU Press Corner website to construct two datasets:\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch Keyword/s\nDocument Type/s\nNo of documents\nFormat\n\n\n\n\n1\nDSA Package\nDSA, DMA, DGA\nFactsheet, news, press release, read-out, speech, statement\n271\npdf, csv, json\n\n\n2\nDigital Speeches\nDigital\nSpeech\n4078\ncsv, json\n\n\n\nThe whole process is rather straightforward. First, I narrow down the selection of files in the EU Press Corner using the keywords and document types in the table above. In addition, I only include documents published between these dates:\nStart date: November 30, 2019 (or the start of President Von der Leyen’s term)  Last update: September 7, 2023 \nThese filters yield paginated results of all press materials that satisfy the given criteria. I parse the URLs to obtain the main text and other metadata - document type, title, date published, and link to the document. I apply some quality checks (e.g. removing duplicates and empty articles) and save the result as csv and json files, which can later be imported as a dataframe. For the DSA Package dataset, I also saved all documents in separate pdf files.\nA part of this process can be seen in the code below. The full source code for the scraper can be found in this  repository.\n\n\nShow code\ndef extract_text(links):\n    '''Function for extracting information from each search result.'''\n\n    print(f\"Number of links: {len(links)}\")\n\n    with tqdm(total=len(links), desc=\"Extracting text\") as pbar:\n        with open('raw.csv', 'a', newline='', encoding='utf-8') as csvfile:\n            fieldnames = [\"document\", \"title\", \"date\", \"location\", \"text\", \"link\"]\n            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n\n            for link in links:\n                soup = load_page(link)\n                title_elem = doc_elems = paragraph_elem = None\n\n                try:\n                    title_elem = soup.find(class_=\"ecl-heading ecl-heading--h1 ecl-u-color-white\")\n                    doc_elems = soup.find_all(class_=\"ecl-meta__item\")\n                    paragraph_elem = soup.find(class_=\"ecl-paragraph\")\n\n                except Exception as e:\n                    print(f\"Error on link {link}: {e}\")\n\n                title = title_elem.text if title_elem else np.nan\n                paragraph = paragraph_elem.text if paragraph_elem else np.nan\n\n                if doc_elems:\n                    doc, date, loc = (elem.text if elem else np.nan for elem in doc_elems[:3])\n                else:\n                    doc, date, loc = np.nan, np.nan, np.nan\n\n                writer.writerow({\n                    \"document\": doc,\n                    \"title\": title,\n                    \"date\": date,\n                    \"location\": loc,\n                    \"text\": paragraph,\n                    \"link\": str(link)\n                })\n\n\nThis is how the final datasets look like:"
+  },
+  {
+    "objectID": "datasets/02 thesis/index.html",
+    "href": "datasets/02 thesis/index.html",
+    "title": "EU Communications on Digital Economy",
+    "section": "",
+    "text": "Digital platforms such as Google, Amazon, and Facebook play a crucial role in today’s technology-driven era. The increasing presence and necessity of digital innovation in our daily lives has prompted governments worldwide to actively regulate platform activities in an effort to prevent and address perceived risks and harms.\nThe European Union is a global leader in this regulatory effort, enacting landmark legislation like the Digital Services Act (DSA) and the Digital Markets Act (DMA). Among other things, these regulations aim to safeguard consumer welfare, address issues concerning data privacy and misinformation, and promote healthy market competition. The European Commission communicates these initiatives to various stakeholders through comprehensive documentation available on the EU Press Corner. The archive comprises a wide variety of press materials like speeches, statements, news articles, and factsheets on the digital policy discourse.\nThe information contained in these documents can be used to explore and answer different policy questions. For example, determining the focus of the EU’s digital strategy through topic modeling, understanding how digital policy issues are communicated through sentiment analysis, or identifying key players and stakeholders through named entity recognition.\nWith the goal of using communication materials to analyze EU digital policy, I scraped the EU Press Corner website to construct two datasets:\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch Keyword/s\nDocument Type/s\nNo of documents\nFormat\n\n\n\n\n1\nDSA Package\nDSA, DMA, DGA\nFactsheet, news, press release, read-out, speech, statement\n271\npdf, csv, json\n\n\n2\nDigital Speeches\nDigital\nSpeech\n4078\ncsv, json\n\n\n\nThe whole process is rather straightforward. First, I narrow down the selection of files in the EU Press Corner using the keywords and document types in the table above. In addition, I only include documents published between these dates:\nStart date: November 30, 2019 (or the start of President Von der Leyen’s term)  Last update: September 7, 2023 \nThese filters yield paginated results of all press materials that satisfy the given criteria. I parse the URLs to obtain the main text and other metadata - document type, title, date published, and link to the document. I apply some quality checks (e.g. removing duplicates and empty articles) and save the result as csv and json files, which can later be imported as a dataframe. For the DSA Package dataset, I also saved all documents in separate pdf files.\nA part of this process can be seen in the code below. The full source code for the scraper can be found in this  repository.\n\n\nShow code\ndef extract_text(links):\n    '''Function for extracting information from each search result.'''\n\n    print(f\"Number of links: {len(links)}\")\n\n    with tqdm(total=len(links), desc=\"Extracting text\") as pbar:\n        with open('raw.csv', 'a', newline='', encoding='utf-8') as csvfile:\n            fieldnames = [\"document\", \"title\", \"date\", \"location\", \"text\", \"link\"]\n            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n\n            for link in links:\n                soup = load_page(link)\n                title_elem = doc_elems = paragraph_elem = None\n\n                try:\n                    title_elem = soup.find(class_=\"ecl-heading ecl-heading--h1 ecl-u-color-white\")\n                    doc_elems = soup.find_all(class_=\"ecl-meta__item\")\n                    paragraph_elem = soup.find(class_=\"ecl-paragraph\")\n\n                except Exception as e:\n                    print(f\"Error on link {link}: {e}\")\n\n                title = title_elem.text if title_elem else np.nan\n                paragraph = paragraph_elem.text if paragraph_elem else np.nan\n\n                if doc_elems:\n                    doc, date, loc = (elem.text if elem else np.nan for elem in doc_elems[:3])\n                else:\n                    doc, date, loc = np.nan, np.nan, np.nan\n\n                writer.writerow({\n                    \"document\": doc,\n                    \"title\": title,\n                    \"date\": date,\n                    \"location\": loc,\n                    \"text\": paragraph,\n                    \"link\": str(link)\n                })\n\n\nThis is how the final datasets look like:"
   }
 ]

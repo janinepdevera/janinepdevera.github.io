@@ -8,3 +8,4 @@ _extensions
 # source code
 *.qmd
 *.yml
+/.luarc.json

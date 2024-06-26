@@ -1,0 +1,17 @@
+[
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/posts/03 climate/index.html",
+      "/posts/02 trade_networks/index.html",
+      "/posts/01 thesis/index.html"
+    ]
+  },
+  {
+    "listing": "/datasets.html",
+    "items": [
+      "/datasets/01 dsa/index.html",
+      "/datasets/02 thesis/index.html"
+    ]
+  }
+]
