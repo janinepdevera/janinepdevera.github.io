@@ -45,6 +45,11 @@ h5.no-anchor.card-title.listing-title {
     margin-bottom: 10px;
 }
 
+h5.anchored {
+    margin-top: 1.5em; 
+    margin-bottom: 1em;
+}
+
 .content li {
     font-size: 15px;
 }
@@ -58,7 +63,8 @@ h5.no-anchor.card-title.listing-title {
 }
 
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    color: #868696;
 }
 
 #quarto-document-content p {
@@ -70,7 +76,33 @@ h5.no-anchor.card-title.listing-title {
 }
 
 .table {
-    font-size: 15px;
+    font-size: 14px;
+}
+
+/* footnotes */
+
+#footnotes li {
+    font-size: 12.5px;
+}
+
+#fn1 p {
+    font-size: 12.5px;
+}
+
+#fn2 p {
+    font-size: 12.5px;
+}
+
+#fn3 p {
+    font-size: 12.5px;
+}
+
+#fn4 p {
+    font-size: 12.5px;
+}
+
+#quarto-appendix.default .quarto-appendix-heading {
+    font-size: 14px !important;
 }
 
 /* general */
@@ -96,6 +128,10 @@ body {
 
 .sourceCode {
     font-size: 12px;
+}
+
+.cell {
+    margin-bottom: 2em;
 }
 
 .cell summary {

@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "Janine De Vera"
 about:
   template: jolla
   image: images/profile.jpg

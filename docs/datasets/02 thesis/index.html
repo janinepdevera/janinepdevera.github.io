@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="I constructed a labelled dataset of legal texts that contain different categories of anticompetitive provisions.">
+<meta name="description" content="I constructed a labeled dataset of legal texts that contain different categories of potentially anticompetitive provisions.">
 
 <title>Janine De Vera - Legal Texts for Competition Impact Assessment</title>
 <style>
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    <p>I constructed a labelled dataset of legal texts that contain different categories of anticompetitive provisions.</p>
+    <p>I constructed a labeled dataset of legal texts that contain different categories of potentially anticompetitive provisions.</p>
   </div>
 </div>
 
@@ -174,100 +174,154 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Digital platforms such as Google, Amazon, and Facebook play a crucial role in today’s technology-driven era. The increasing presence and necessity of digital innovation in our daily lives has prompted governments worldwide to actively regulate platform activities in an effort to prevent and address perceived risks and harms.</p>
-<p>The European Union is a global leader in this regulatory effort, enacting landmark legislation like the <strong>Digital Services Act (DSA)</strong> and the <strong>Digital Markets Act (DMA)</strong>. Among other things, these regulations aim to safeguard consumer welfare, address issues concerning data privacy and misinformation, and promote healthy market competition. The European Commission communicates these initiatives to various stakeholders through comprehensive documentation available on the <a class="third-hover" href="https://ec.europa.eu/commission/presscorner/home/en"><strong>EU Press Corner</strong></a>. The archive comprises a wide variety of press materials like <strong>speeches, statements, news articles, and factsheets</strong> on the digital policy discourse.</p>
-<p>The information contained in these documents can be used to explore and answer different policy questions. For example, determining the focus of the EU’s digital strategy through <strong>topic modeling</strong>, understanding how digital policy issues are communicated through <strong>sentiment analysis</strong>, or identifying key players and stakeholders through <strong>named entity recognition</strong>.</p>
-<p>With the goal of using communication materials to analyze EU digital policy, I scraped the EU Press Corner website to construct <strong>two datasets</strong>:</p>
+<p>One of the most useful applications of Natural Language Processing in the legal profession is <strong>text and document classification</strong>.</p>
+<p>The practice of law deals with large volumes of legal documents that need to be sorted and organized. Such administrative tasks can take a significant amount of time and manpower and can shift a lawyer’s focus away from tasks that need more human expertise and judgment.</p>
+<p>In my master’s thesis <a class="third-hover" href="../../posts/01 thesis/index.html"><strong><em>Legal Text Classification for Competition Impact Assessment Studies</em></strong></a> (CIA), I trained machine and deep learning models to aid the initial document screening and review process that is part of every CIA. The goal of the models is to <strong>(1) identify laws that contain provisions</strong> that can potentially harm and restrict market competition, and <strong>(2)</strong> <strong>distinguish between multiple categories</strong> of these restrictions. These are essentially binary and multiclass classification problems.</p>
+<p>Pre-labeled data is an essential element of classification tasks. Machine learning algorithms learn from examples that map an outcome variable to the text or input data. For this exercise <strong>I collected a set of legal texts (bills, acts, resolutions, decrees, executive orders) and matched them to categories of anticompetitive provisions.</strong> I also augmented the data to ensure a balanced training set. The final dataset consists of 4,153 labeled paragraphs, each averaging 45 words in length.</p>
+<section id="pre-processing-of-legal-texts-and-labels" class="level5">
+<h5 class="anchored" data-anchor-id="pre-processing-of-legal-texts-and-labels">Pre-processing of legal texts and labels</h5>
+<p>The Organisation for Economic Co-operation and Development (OECD) has a competition division that conducts CIAs in different industries and economies. The list of legal documents I used for this study were gathered from official government databases of 7 countries<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> where a round of CIA studies were recently conducted. The corpus includes <strong>273 unique sector legislation</strong>. I collapsed this into unique paragraphs and applied the usual text pre-processing steps – removal of numeric characters and symbols, lowercasing, and lemmatization.</p>
+<p>The outcome labels are based on the OECD’s <a class="third-hover" href="https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf">CIA checklist</a>. There are <strong>four categories of potentially anticompetitive provisions</strong>.</p>
 <table class="table">
 <colgroup>
-<col style="width: 2%">
-<col style="width: 12%">
-<col style="width: 15%">
-<col style="width: 43%">
-<col style="width: 14%">
-<col style="width: 12%">
+<col style="width: 25%">
+<col style="width: 26%">
+<col style="width: 48%">
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th></th>
-<th style="text-align: center;"><strong>Search Keyword/s</strong></th>
-<th style="text-align: center;"><strong>Document Type/s</strong></th>
-<th style="text-align: center;"><strong>No of documents</strong></th>
-<th style="text-align: center;"><strong>Format</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Category</th>
+<th style="text-align: center;">Sub-categories</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>DSA Package</td>
-<td style="text-align: center;">DSA, DMA, DGA</td>
-<td style="text-align: center;">Factsheet, news, press release, read-out, speech, statement</td>
-<td style="text-align: center;">271</td>
-<td style="text-align: center;">pdf, csv, json</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">Limits the number or range of suppliers</td>
+<td style="text-align: center;">Exclusivity rights, licenses and permits, cost of entry, geographical barriers</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Digital Speeches</td>
-<td style="text-align: center;">Digital</td>
-<td style="text-align: center;">Speech</td>
-<td style="text-align: center;">4078</td>
-<td style="text-align: center;">csv, json</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Limits the ability of suppliers to compete</td>
+<td style="text-align: center;">Price regulation, advertising restrictions, unduly strict quality standards, cost of production</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">Reduces the incentive of suppliers to compete</td>
+<td style="text-align: center;">Self- or co-regulatory regimes, publishing of sensitive business information, exemption from antitrust laws</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">Limits the choices and information available to customers</td>
+<td style="text-align: center;">Buyer-seller information assymetry, consumer switching costs</td>
 </tr>
 </tbody>
 </table>
-<p>The whole process is rather straightforward. First, I narrow down the selection of files in the EU Press Corner using the keywords and document types in the table above. In addition, I only include documents published between these dates:</p>
-<p><strong>Start date</strong>: November 30, 2019 (or the start of President Von der Leyen’s term) <br> <strong>Last update</strong>: September 7, 2023 <br></p>
-<p>These filters yield paginated results of all <strong>press materials that satisfy the given criteria</strong>. I parse the URLs to obtain the <strong>main text and other metadata</strong> - document type, title, date published, and link to the document. I apply some quality checks (e.g.&nbsp;removing duplicates and empty articles) and save the result as csv and json files, which can later be imported as a dataframe. For the DSA Package dataset, I also saved all documents in separate pdf files.</p>
-<p>A part of this process can be seen in the code below. The full source code for the scraper can be found in this <a class="third-hover" href="https://github.com/janinepdevera/scraper-eu-press"><i class="fa-brands fa-github" aria-label="github"></i> repository</a>.</p>
+<p><strong>Paragraphs from the legal text corpus are assigned to one of the four categories</strong>. I also include a <em>None</em> category for paragraphs that do not fall into any of the above restrictions. The initial assignments are based on manual annotations by the OECD, published in existing <a class="third-hover" href="https://www.oecd.org/daf/competition/assessment-toolkit.htm">CIA reports</a>. Most of these are hard coded in PDF files and had to be parsed and re-encoded. I also added a small sample of texts (less than 100) which I manually encoded. The resulting preliminary dataset has 2,104 paragraphs, with assigned labels skewed to category A<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. To address the data imbalance, I use <strong>data augmentation</strong> technique called <strong>back translation</strong>.</p>
+</section>
+<section id="data-augmentation-and-back-translation-of-texts" class="level5">
+<h5 class="anchored" data-anchor-id="data-augmentation-and-back-translation-of-texts">Data augmentation and back translation of texts</h5>
+<p>Back translation involves <strong>translating text into a “host” language before translating back to the original language</strong> (in this case English). As a result, new sentences are created with variations on choice of words and stylistic properties, but without significant alternations to its meaning. I use 16 host languages for the back translation of legal texts<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>The code below shows the functions used to implement the back translation. The full source code and all notebooks used for this project can be found in this <a class="third-hover" href="https://github.com/janinepdevera/multilabel-legal-text-classification-CIA"><i class="fa-brands fa-github" aria-label="github"></i> repository</a>.</p>
 <div class="cell" data-execution_count="1">
-<details>
+<details open="">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_text(links):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Function for extracting information from each search result.'''</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Number of links: </span><span class="sc">{</span><span class="bu">len</span>(links)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> tqdm(total<span class="op">=</span><span class="bu">len</span>(links), desc<span class="op">=</span><span class="st">"Extracting text"</span>) <span class="im">as</span> pbar:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">'raw.csv'</span>, <span class="st">'a'</span>, newline<span class="op">=</span><span class="st">''</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> csvfile:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            fieldnames <span class="op">=</span> [<span class="st">"document"</span>, <span class="st">"title"</span>, <span class="st">"date"</span>, <span class="st">"location"</span>, <span class="st">"text"</span>, <span class="st">"link"</span>]</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            writer <span class="op">=</span> csv.DictWriter(csvfile, fieldnames<span class="op">=</span>fieldnames)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> link <span class="kw">in</span> links:</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                soup <span class="op">=</span> load_page(link)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                title_elem <span class="op">=</span> doc_elems <span class="op">=</span> paragraph_elem <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                    title_elem <span class="op">=</span> soup.find(class_<span class="op">=</span><span class="st">"ecl-heading ecl-heading--h1 ecl-u-color-white"</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                    doc_elems <span class="op">=</span> soup.find_all(class_<span class="op">=</span><span class="st">"ecl-meta__item"</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                    paragraph_elem <span class="op">=</span> soup.find(class_<span class="op">=</span><span class="st">"ecl-paragraph"</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"Error on link </span><span class="sc">{</span>link<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                title <span class="op">=</span> title_elem.text <span class="cf">if</span> title_elem <span class="cf">else</span> np.nan</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                paragraph <span class="op">=</span> paragraph_elem.text <span class="cf">if</span> paragraph_elem <span class="cf">else</span> np.nan</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> doc_elems:</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                    doc, date, loc <span class="op">=</span> (elem.text <span class="cf">if</span> elem <span class="cf">else</span> np.nan <span class="cf">for</span> elem <span class="kw">in</span> doc_elems[:<span class="dv">3</span>])</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                    doc, date, loc <span class="op">=</span> np.nan, np.nan, np.nan</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                writer.writerow({</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"document"</span>: doc,</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"title"</span>: title,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"date"</span>: date,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"location"</span>: loc,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"text"</span>: paragraph,</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"link"</span>: <span class="bu">str</span>(link)</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download language translators</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_translator(lang, from_eng<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    prefix <span class="op">=</span> <span class="st">"en-"</span> <span class="cf">if</span> from_eng <span class="cf">else</span> <span class="st">""</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    suffix <span class="op">=</span> <span class="st">"-en"</span> <span class="cf">if</span> <span class="kw">not</span> from_eng <span class="cf">else</span> <span class="st">""</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    translator <span class="op">=</span> <span class="ss">f'Helsinki-NLP/opus-mt-</span><span class="sc">{</span>prefix<span class="sc">}{</span>lang<span class="sc">}{</span>suffix<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    translator_tokenizer <span class="op">=</span> MarianTokenizer.from_pretrained(translator)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    translator_model <span class="op">=</span> MarianMTModel.from_pretrained(translator)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>prefix<span class="sc">}{</span>lang<span class="sc">}{</span>suffix<span class="sc">}</span><span class="ss"> translator downloaded.'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> translator_model, translator_tokenizer</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># translate text</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_translation(batch_text, model, tokenizer, lang):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    formated_batch_texts <span class="op">=</span> [<span class="st">"&gt;&gt;</span><span class="sc">{}</span><span class="st">&lt;&lt; </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(lang, text) <span class="cf">for</span> text <span class="kw">in</span> batch_text]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    translated <span class="op">=</span> model.generate(<span class="op">**</span>tokenizer(formated_batch_texts, return_tensors<span class="op">=</span><span class="st">"pt"</span>, padding<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    translated_texts <span class="op">=</span> [tokenizer.decode(t, skip_special_tokens<span class="op">=</span><span class="va">True</span>) <span class="cf">for</span> t <span class="kw">in</span> translated]</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> translated_texts</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># back translation</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> back_translation(model, tokenizer, model_back, tokenizer_back, batch_texts, org_lang<span class="op">=</span><span class="st">"en"</span>, temp_lang<span class="op">=</span><span class="st">"fr"</span>):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    temp_trans_batch <span class="op">=</span> run_translation(batch_texts, model, tokenizer, temp_lang)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    back_trans_batch <span class="op">=</span> run_translation(temp_trans_batch, model_back, tokenizer_back, org_lang)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> back_trans_batch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>This is how the final datasets look like:</p>
+<p>Below are sample back translations of the text:</p>
+<blockquote class="blockquote">
+<p><em>The public notice can include requirements on the brand or model.</em></p>
+</blockquote>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 41%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Language</strong></th>
+<th style="text-align: center;"><strong>Translation</strong></th>
+<th style="text-align: center;"><strong>Back translation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">French</td>
+<td style="text-align: center;">L’avis public peut inclure des exigences relatives à la marque ou au modèle.</td>
+<td style="text-align: center;">The public notice may include trademark or model requirements.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Dutch</td>
+<td style="text-align: center;">De bekendmaking kan eisen van merk of model bevatten.</td>
+<td style="text-align: center;">The publication may contain requirements of a trade mark or a model.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Italian</td>
+<td style="text-align: center;">L’avviso pubblico puó includere requisiti di marca o modello.</td>
+<td style="text-align: center;">The public notice may include make or model requirements.</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">'The public notice can include requirements on the brand or model'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sample_set <span class="op">=</span> []</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>lang_sample <span class="op">=</span> [<span class="st">'fr'</span>, <span class="st">'nl'</span>, <span class="st">'it'</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lang <span class="kw">in</span> lang_sample:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> models[lang]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    tokenizer <span class="op">=</span> tokenizers[lang]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    model_back <span class="op">=</span> models_back[lang]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    tokenizer_back <span class="op">=</span> tokenizers_back[lang]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    temp_trans_batch <span class="op">=</span> run_translation([sample_text], model, tokenizer, lang)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    back_trans_batch <span class="op">=</span> run_translation(temp_trans_batch, model_back, tokenizer_back, <span class="st">"en"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    sample_set.append([lang, temp_trans_batch[<span class="dv">0</span>], back_trans_batch[<span class="dv">0</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>After back translation, the final dataset has <strong>4,153 labeled paragraphs</strong> and a <strong>21-31-23-25 split among categories</strong>. Below is a sample of the data.</p>
+<p><img src="images/dataset.jpg" class="img-fluid"></p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The countries included are Brazil, Brunei, Indonesia, Malaysia, Mexico, Philippines, Singapore<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The initial distribution of labels is category A: 48%, B: 11%, C: 2%, D and Others: 3%, None: 36%<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Back translation is only applied to the training set (excludes the test set to avoid data leakage)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
