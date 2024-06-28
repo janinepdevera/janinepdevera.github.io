@@ -1,7 +1,7 @@
 ---
 title: "Legal Texts for Competition Impact Assessment"
 description: | 
-    A labeled dataset of more than 4000 legal texts mapped to different categories of potentially anticompetitive provisions
+    A labeled dataset of more than 4000 paragraphs mapped to different categories of potentially anticompetitive provisions
 format: 
     html:
         code-fold: true
@@ -37,9 +37,9 @@ One of the most useful applications of Natural Language Processing in the legal 
 
 In my master’s thesis <a class='third-hover' href='../../posts/01 thesis/index.qmd'>*Legal Text Classification for Competition Impact Assessment Studies*</a> (CIA), I trained machine and deep learning models to aid the initial document screening and review process that is part of every CIA. The goal of the models is to **(1) identify laws that contain provisions** that can potentially harm and restrict market competition, and **(2) distinguish between multiple categories** of these restrictions. These are essentially binary and multiclass classification problems.
 
-Pre-labeled data is an essential element of classification tasks. Machine learning algorithms learn from examples that map an outcome variable to the text or input data. For this exercise **I collected a set of legal texts (bills, acts, resolutions, decrees, executive orders) matched to categories of anticompetitive provisions.** I cleaned and augmented the data to ensure a high-quality and balanced training set. The final dataset consists of 4,153 labeled paragraphs, each averaging 45 words in length.
+Pre-labeled data is an essential element of classification tasks. Machine learning algorithms learn from examples that map an outcome variable to the text or input data. For this exercise **I collected a set of legal texts (bills, acts, resolutions, decrees, executive orders) matched to categories of anticompetitive provisions.** I cleaned and augmented the data to ensure a high-quality and balanced training set. The final dataset consists of 4,153 labeled paragraphs averaging 45 words in length.
 
-##### Pre-processing of legal texts and labels
+###### [Pre-processing of legal texts and labels]{.third-color}
 
 The OECD has a competition division that conducts CIAs in different industries and economies. The list of legal documents I used for this study were gathered from official government databases of 7 countries[^1] where a round of CIA studies were recently conducted. The corpus includes **273 unique sector legislation**. I collapsed this into unique paragraphs and applied the usual text pre-processing steps – removal of numeric characters and symbols, lowercasing, and lemmatization.
 
@@ -60,7 +60,7 @@ There are other miscellaneous provisions (e.g. administrative burden and grandfa
 
 [^2]: The initial distribution of labels is category A: 48%, B: 11%, C: 2%, Others: 3%, None: 36%
 
-##### Data augmentation and back translation of texts
+###### [Data augmentation and back translation of texts]{.third-color}
 
 Back translation involves **translating text into a "host" language** before translating back to the original language (in this case English). As a result, new sentences are created with variations on choice of words and stylistic properties, but without significant alternations to its meaning. I use 16 host languages for the back translation of legal texts[^3].
 

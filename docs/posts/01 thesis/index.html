@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="I build a legal text classifier that correctly identifies 97% of paragpraphs with potentially problematic provisions.">
+<meta name="dcterms.date" content="2023-05-13">
+<meta name="description" content="I build a legal text classifier that correctly identifies up to 97% of paragraphs with potentially problematic provisions.">
 
 <title>Janine De Vera - Using AI to Detect Anti-Competitive Legislation</title>
 <style>
@@ -123,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    <p>I build a legal text classifier that correctly identifies 97% of paragpraphs with potentially problematic provisions.</p>
+    <p>I build a legal text classifier that correctly identifies up to 97% of paragraphs with potentially problematic provisions.</p>
   </div>
 </div>
 
@@ -131,6 +132,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 13, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -138,15 +145,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="main.jpg" class="img-fluid figure-img" style="width:75.0%"></p>
-</figure>
-</div>
 <p>Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new and existing policies for anti-competitive provisions. <strong>Competition Impact Assessment (CIA)</strong> studies are necessary for ensuring that regulations strike a balance between meeting different sector objectives and preserving a competitive market environment.</p>
 <p>Ideally, most laws should be subjected to CIA and other types of regulatory assessments. But this is a time-consuming exercise: an <strong>initial review alone can take 2-4 months</strong>, according to an OECD representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment is great. Having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand experience of how such undertakings can severely strain resources.</p>
 <p>Recent years have shown that machine learning and AI, particularly large language models (LLM), can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master’s thesis. AI is no replacement for an expert’s thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.</p>
-<p>For my model, I use a database of <strong>legislative documents</strong> in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually assigned into one of 4 categories identified in the <a class="second-hover" href="https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf">CIA checklist</a> of the OECD:</p>
+<p>For my model, I use a database of <strong>legislative documents</strong> in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually labels based on the 4 categories identified in the <a class="second-hover" href="https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf">CIA checklist</a> of the OECD:</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -183,13 +185,28 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>A good amount of processing had to be conducted to prepare the data for modeling. I disucss the data preparation step and provide an sample of the labeled dataset in <a class="second-hover" href="../../datasets/02 thesis/index.html">this post</a>.</p>
-<p>My outcome variable is either one of these categories or “None”. I train my model on the labeled data and …</p>
+<p>Category D is lumped together with other miscellaneous provions into a new category called <em>Others</em>. If the paragraph does not relate to any of the 4 categories, it is assigned a label of <em>None</em>. A good amount of processing had to be conducted to prepare the data for modeling. I disucss the data preparation step and provide an sample of the labeled dataset in <a class="second-hover" href="../../datasets/02 thesis/index.html">this post</a>.</p>
+<p>Automating the initial screening of documents for CIA can be divided into two parts. First, identifying whether a law has provisions with potential anticompetitive effects. This is a yes or no question that can be framed as a binary classification task. Second, distinguishing between multiple categories of restrictions in laws that have been flagged in the first step. I treat this as a multiclass task.</p>
+<section id="binary-classification-is-the-law-potentially-anticompetitive" class="level6">
+<h6 class="anchored" data-anchor-id="binary-classification-is-the-law-potentially-anticompetitive"><span class="second-color">Binary classification: is the law potentially anticompetitive?</span></h6>
+<p>To get the outcome variable for the binary classification task, all four categories are encoded as 1 or <em>with restrictions</em> and none as 0 or <em>no restrictions</em>. From here, I build the text classification pipeline. First, relevant features are extracted from the text. These inpput features are then used to train and validate different model specifications, which I then fine-tune to get the model with the best performance.</p>
+<p>I test four different input features</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01 binary.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
 <p>[Further description of methodology]</p>
 <p>[Results: binary classifier, full classifier]</p>
 <p>The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of deep learning models, the time spent on repetitive can be greatly reduced, allowing human minds to focus on deeper analytical tasks.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/03 sbert.jpg" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

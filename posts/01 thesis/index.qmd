@@ -1,12 +1,11 @@
 ---
 title: "Using AI to Detect Anti-Competitive Legislation"
 description: | 
-    I build a legal text classifier that correctly identifies 97% of paragpraphs with potentially problematic provisions.
+    I build a legal text classifier that correctly identifies up to 97% of paragraphs with potentially problematic provisions.
+date: 2023-05-13
 format: html
-image: main.gif
+image: images/main.gif
 ---
-
-![](main.jpg){width="75%" fig-align="center"}
 
 Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new and existing policies for anti-competitive provisions. **Competition Impact Assessment (CIA)** studies are necessary for ensuring that regulations strike a balance between meeting different sector objectives and preserving a competitive market environment.
 
@@ -14,7 +13,7 @@ Ideally, most laws should be subjected to CIA and other types of regulatory asse
 
 Recent years have shown that machine learning and AI, particularly large language models (LLM), can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master's thesis. AI is no replacement for an expert's thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.
 
-For my model, I use a database of **legislative documents** in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually assigned into one of 4 categories identified in the <a class='second-hover' href='https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf'>CIA checklist</a> of the OECD:
+For my model, I use a database of **legislative documents** in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually labels based on the 4 categories identified in the <a class='second-hover' href='https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf'>CIA checklist</a> of the OECD:
 
 |     |                         Category                          |                                               Sub-categories                                                |
 |:----------------:|:-----------------:|:---------------------------------:|
@@ -23,12 +22,22 @@ For my model, I use a database of **legislative documents** in countries where a
 |  C  |       Reduces the incentive of suppliers to compete       | Self- or co-regulatory regimes, publishing of sensitive business information, exemption from antitrust laws |
 |  D  | Limits the choices and information available to customers |                        Buyer-seller information assymetry, consumer switching costs                         |
 
-A good amount of processing had to be conducted to prepare the data for modeling. I disucss the data preparation step and provide an sample of the labeled dataset in <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>this post</a>.
+Category D is lumped together with other miscellaneous provions into a new category called *Others*. If the paragraph does not relate to any of the 4 categories, it is assigned a label of *None*. A good amount of processing had to be conducted to prepare the data for modeling. I disucss the data preparation step and provide an sample of the labeled dataset in <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>this post</a>.
 
-My outcome variable is either one of these categories or "None". I train my model on the labeled data and ...
+Automating the initial screening of documents for CIA can be divided into two parts. First, identifying whether a law has provisions with potential anticompetitive effects. This is a yes or no question that can be framed as a binary classification task. Second, distinguishing between multiple categories of restrictions in laws that have been flagged in the first step. I treat this as a multiclass task. 
+
+###### [Binary classification: is the law potentially anticompetitive?]{.second-color}
+
+To get the outcome variable for the binary classification task, all four categories are encoded as 1 or *with restrictions* and none as 0 or *no restrictions*. From here, I build the text classification pipeline. First, relevant features are extracted from the text. These inpput features are then used to train and validate different model specifications, which I then fine-tune to get the model with the best performance. 
+
+I test four different input features 
+
+![](images/01 binary.png){width="75%" fig-align="center"}
 
 \[Further description of methodology\]
 
 \[Results: binary classifier, full classifier\]
 
 The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of deep learning models, the time spent on repetitive can be greatly reduced, allowing human minds to focus on deeper analytical tasks.
+
+![](images/03 sbert.jpg){width="75%" fig-align="center"}

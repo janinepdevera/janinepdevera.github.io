@@ -3,7 +3,7 @@ title: "Portfolio"
 listing: 
   contents: posts
   type: grid
-  sort-ui: false
+  sort: "date desc"
   filter-ui: false 
   image-height: 280px
 page-layout: full

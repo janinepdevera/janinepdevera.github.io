@@ -50,6 +50,11 @@ h5.anchored {
     margin-bottom: 1em;
 }
 
+h6.anchored {
+    margin-top: 1.5em; 
+    margin-bottom: 0.8em;
+}
+
 .content li {
     font-size: 15px;
 }
@@ -83,6 +88,14 @@ h5.anchored {
 
 .description>p {
     margin-top: 10px;
+}
+
+.quarto-title-meta div {
+    display: none;
+}
+
+div.listing-date {
+    display: none;
 }
 
 /* tables */
