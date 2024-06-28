@@ -1,13 +1,38 @@
 ---
 title: "EU Press Materials on Digital Policy"
 description: | 
-    I scraped the European Union Press Corner to extract communication materials related to platform regulation and digital economy. 
+    A clean corpus of over 4000 documents scraped from the EU website
 format: 
     html:
         code-fold: true
         code-summary: "Show code"
 image: images/thumbnail.jpg
+jupyter: 
+    kernelspec:
+        name: "website"
+        language: "python"
+        display_name: "website"
 ---
+
+**EU Digital Speeches Dataset** (39 MB)<br> 
+4078 rows<br>
+<a class='third-hover' href='https://github.com/janinepdevera/scraper-eu-press/blob/main/data/eu-digital-speeches.csv'>Download here</a><br>
+
+```{python}
+#| echo: false
+
+import pandas as pd
+from itables import show
+from itables import init_notebook_mode
+init_notebook_mode(all_interactive=True)
+
+df = pd.read_csv('./data/01 digital speeches.csv', index_col=0)
+df_sample = df[:99]
+
+show(df_sample, layout={"topStart": None, "topEnd": None, "bottomStart": None})
+```
+
+##### About this dataset
 
 Digital platforms such as Google, Amazon, and Facebook play a crucial role in today’s technology-driven era. The increasing presence and necessity of digital innovation in our daily lives has prompted governments worldwide to actively regulate platform activities in an effort to prevent and address perceived risks and harms. 
 

@@ -138,11 +138,52 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="main.jpg" class="img-fluid"></p>
-<p>Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new policies for anti-competitive provisions. But this is a time-consuming exercise: an initial review alone can take 2-4 months, according to an OECD representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment (CIA) is great. Indeed, having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand knowledge of how such undertakings can severely strain resources.</p>
-<p>Recent years have shown that AI, particularly large language models, can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master’s thesis. AI is no replacement for an expert’s thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.</p>
-<p>For my model, I use a database of legislative documents in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7335 unique paragraphs of which 2104 have been manually assigned by the OECD into one of 4 categories identified in its CIA Checklist:</p>
-<p>A B C D</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="main.jpg" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+<p>Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new and existing policies for anti-competitive provisions. <strong>Competition Impact Assessment (CIA)</strong> studies are necessary for ensuring that regulations strike a balance between meeting different sector objectives and preserving a competitive market environment.</p>
+<p>Ideally, most laws should be subjected to CIA and other types of regulatory assessments. But this is a time-consuming exercise: an <strong>initial review alone can take 2-4 months</strong>, according to an OECD representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment is great. Having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand experience of how such undertakings can severely strain resources.</p>
+<p>Recent years have shown that machine learning and AI, particularly large language models (LLM), can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master’s thesis. AI is no replacement for an expert’s thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.</p>
+<p>For my model, I use a database of <strong>legislative documents</strong> in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually assigned into one of 4 categories identified in the <a class="second-hover" href="https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf">CIA checklist</a> of the OECD:</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 26%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Category</th>
+<th style="text-align: center;">Sub-categories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">Limits the number or range of suppliers</td>
+<td style="text-align: center;">Exclusivity rights, licenses and permits, cost of entry, geographical barriers</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Limits the ability of suppliers to compete</td>
+<td style="text-align: center;">Price regulation, advertising restrictions, unduly strict quality standards, cost of production</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">Reduces the incentive of suppliers to compete</td>
+<td style="text-align: center;">Self- or co-regulatory regimes, publishing of sensitive business information, exemption from antitrust laws</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">Limits the choices and information available to customers</td>
+<td style="text-align: center;">Buyer-seller information assymetry, consumer switching costs</td>
+</tr>
+</tbody>
+</table>
+<p>A good amount of processing had to be conducted to prepare the data for modeling. I disucss the data preparation step and provide an sample of the labeled dataset in <a class="second-hover" href="../../datasets/02 thesis/index.html">this post</a>.</p>
 <p>My outcome variable is either one of these categories or “None”. I train my model on the labeled data and …</p>
 <p>[Further description of methodology]</p>
 <p>[Results: binary classifier, full classifier]</p>

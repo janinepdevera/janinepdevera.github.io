@@ -80,8 +80,24 @@ h5.anchored {
     margin-top: 10px;
 }
 
+/* tables */
+
 .table {
     font-size: 14px;
+}
+
+div.dt-layout-row.dt-layout-table {
+    font-size: 12px;
+}
+
+table td {
+    max-width: 200px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+button.dt-paging-button {
+    font-size: 12px;
 }
 
 /* footnotes */

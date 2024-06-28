@@ -1,0 +1,11 @@
+---
+title: "Emotionality in Political Speech"
+description: | 
+    Sample sample sample
+format: html
+image: image.png
+---
+
+![Image](image.png)
+
+ 
