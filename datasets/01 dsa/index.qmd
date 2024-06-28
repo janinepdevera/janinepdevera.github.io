@@ -14,9 +14,7 @@ jupyter:
         display_name: "website"
 ---
 
-**EU Digital Speeches Dataset** (39 MB)<br> 
-4078 rows<br>
-<a class='third-hover' href='https://github.com/janinepdevera/scraper-eu-press/blob/main/data/eu-digital-speeches.csv'>Download here</a><br>
+**EU Digital Speeches Dataset** (39 MB)<br> 4078 rows<br> <a class='third-hover' href='https://github.com/janinepdevera/scraper-eu-press/blob/main/data/eu-digital-speeches.csv'>Download here</a><br>
 
 ```{python}
 #| echo: false
@@ -26,7 +24,7 @@ from itables import show
 from itables import init_notebook_mode
 init_notebook_mode(all_interactive=True)
 
-df = pd.read_csv('./data/01 digital speeches.csv', index_col=0)
+df = pd.read_csv('./data/digital-speeches.csv', index_col=0)
 df_sample = df[:99]
 
 show(df_sample, layout={"topStart": None, "topEnd": None, "bottomStart": None})
@@ -34,28 +32,17 @@ show(df_sample, layout={"topStart": None, "topEnd": None, "bottomStart": None})
 
 ##### About this dataset
 
-Digital platforms such as Google, Amazon, and Facebook play a crucial role in today’s technology-driven era. The increasing presence and necessity of digital innovation in our daily lives has prompted governments worldwide to actively regulate platform activities in an effort to prevent and address perceived risks and harms. 
+Digital platforms such as Google, Amazon, and Facebook play a crucial role in today’s technology-driven era. The increasing presence and necessity of digital innovation in our daily lives has prompted governments worldwide to actively regulate platform activities in an effort to prevent and address perceived risks and harms.
 
-The European Union is a global leader in this regulatory effort, enacting landmark legislation like the **Digital Services Act (DSA)** and the **Digital Markets Act (DMA)**. Among other things, these regulations aim to safeguard consumer welfare, address issues concerning data privacy and misinformation, and promote healthy market competition. The European Commission communicates these initiatives to various stakeholders through comprehensive documentation available on the <a class = 'third-hover' href='https://ec.europa.eu/commission/presscorner/home/en'>**EU Press Corner**</a>. The archive comprises a wide variety of press materials like **speeches, statements, news articles, and factsheets** on the digital policy discourse. 
+The European Union is a global leader in this regulatory effort, enacting landmark legislation like the Digital Services Act (DSA) and the Digital Markets Act (DMA). Among other things, these regulations aim to safeguard consumer welfare, address issues concerning data privacy and misinformation, and promote healthy market competition. The European Commission communicates these initiatives to various stakeholders through comprehensive documentation available on the <a class = 'third-hover' href='https://ec.europa.eu/commission/presscorner/home/en'>**EU Press Corner**</a>. The archive comprises a wide variety of press materials like **speeches, statements, news articles, and factsheets** on the digital policy discourse.
 
-The information contained in these documents can be used to explore and answer different policy questions. For example, determining the focus of the EU’s digital strategy through **topic modeling**, understanding how digital policy issues are communicated through **sentiment analysis**, or identifying key players and stakeholders through **named entity recognition**. 
+The information contained in these documents can be used to explore and answer different policy questions. For example, determining the focus of the EU’s digital strategy through **topic modeling**, understanding how digital policy issues are communicated through **sentiment analysis**, or identifying key players and stakeholders through **named entity recognition**.
 
-With the goal of using communication materials to analyze EU digital policy, I scraped the EU Press Corner website to construct **two datasets**: 
+With the goal of using communication materials to analyze EU digital policy, I scraped the EU Press Corner website to construct a dataset of speeches that contain the keyword ***digital***.
 
-|   |                  | **Search Keyword/s** |                      **Document Type/s**                      | **No of documents** |    **Format**    |
-|---|------------------|:--------------------:|:-------------------------------------------------------------:|:-------------------:|:----------------:|
-| 1 | DSA Package      | DSA, DMA, DGA        | Factsheet,   news, press release, read-out, speech, statement | 271                 | pdf,   csv, json |
-| 2 | Digital Speeches | Digital              | Speech                                                        | 4078                | csv, json        |    
+The whole process is rather straightforward. Applying keyword and document type filters to the archive yields paginated results of all press materials that satisfy the given criteria. I parse the URLs to obtain the **main text and other metadata** - document type, title, date published, and link to the document. I apply some quality checks (e.g. removing duplicates and empty articles) and save the result as csv and json files, which can later be imported as a dataframe.
 
-The whole process is rather straightforward. First, I narrow down the selection of files in the EU Press Corner using the keywords and document types in the table above. In addition, I only include documents published between these dates: 
-
-**Start date**: November 30, 2019 (or the start of President Von der Leyen's term) <br>
-**Last update**: September 7, 2023
-<br>
-
-These filters yield paginated results of all **press materials that satisfy the given criteria**. I parse the URLs to obtain the **main text and other metadata** - document type, title, date published, and link to the document. I apply some quality checks (e.g. removing duplicates and empty articles) and save the result as csv and json files, which can later be imported as a dataframe. For the DSA Package dataset, I also saved all documents in separate pdf files. 
-
-A part of this process can be seen in the code below. The full source code for the scraper can be found in this <a class = 'third-hover' href= 'https://github.com/janinepdevera/scraper-eu-press'>{{< fa brands github >}} repository</a>. 
+A part of this process can be seen in the code below. The full source code for the scraper can be found in this <a class = 'third-hover' href= 'https://github.com/janinepdevera/scraper-eu-press'>{{< fa brands github >}} repository</a>.
 
 ```{python}
 #| eval: false
@@ -102,6 +89,6 @@ def extract_text(links):
                 })
 ```
 
-This is how the final datasets look like: 
+------------------------------------------------------------------------
 
-![](images/dataset.jpg)
+[**Note:** A smaller corpus of press materials (including statements, news articles, and fact sheets) specific to the Digital Services Act and Digital Markets Act is also available upon request.]{.post-footer}

@@ -59,6 +59,11 @@ h5.anchored {
     color: #868696
 } */
 
+.post-footer {
+    font-size: 13px;
+    color: #868696
+}
+
 #title-block-header.quarto-title-block.default .quarto-title h1.title {
     font-size: 30px;
 }
