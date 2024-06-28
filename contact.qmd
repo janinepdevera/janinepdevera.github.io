@@ -1,5 +1,7 @@
 ---
 title: "Contact"
+about:
+  template: jolla
 ---
 
 # [Let's connect!]{.fourth-color}

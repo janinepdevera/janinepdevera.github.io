@@ -3,6 +3,8 @@ title: "Janine De Vera"
 about:
   template: jolla
   image: images/profile.jpg
+  id: munchkin
+title-block-banner: false
 ---
 
 ::: {.grid}

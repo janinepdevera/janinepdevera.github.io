@@ -54,6 +54,11 @@ h5.anchored {
     font-size: 15px;
 }
 
+/* .post-subtitle {
+    font-size: 18px;
+    color: #868696
+} */
+
 #title-block-header.quarto-title-block.default .quarto-title h1.title {
     font-size: 30px;
 }
@@ -63,7 +68,7 @@ h5.anchored {
 }
 
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
-    margin-bottom: 2em;
+    margin-bottom: 1.8em;
     color: #868696;
 }
 
@@ -115,15 +120,15 @@ body {
     font-size: 25px;
 }
 
+.profile-image p {
+    margin: 0 0 0 0;
+}
+
 .location {
     font-size: 18px;
     color: gray;
     padding-top: 10px;
     display: inline-block;
-}
-
-.profile-image p {
-    margin: 0 0 0 0;
 }
 
 .sourceCode {
@@ -136,4 +141,20 @@ body {
 
 .cell summary {
     font-size: 15px; 
+}
+
+.quarto-about-jolla img.round {
+    margin-bottom: 0em;
+}
+
+.quarto-about-jolla h1.title {
+    display: none;
+}
+
+div.page-layout-full h1.title {
+    display: none;
+}
+
+#about h1 {
+    margin-top: 0.5em;
 }

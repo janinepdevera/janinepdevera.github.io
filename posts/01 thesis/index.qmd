@@ -1,7 +1,7 @@
 ---
 title: "Using AI to Detect Anti-Competitive Legislation"
 description: | 
-    I build a legal text classifier that correctly identifies 97% of paragraphs with potentially problematic provisions.
+    I build a legal text classifier that correctly identifies 97% of paragpraphs with potentially problematic provisions.
 format: html
 image: main.gif
 ---
