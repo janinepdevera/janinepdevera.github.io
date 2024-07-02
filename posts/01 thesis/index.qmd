@@ -1,21 +1,25 @@
 ---
 title: "Using AI to Detect Anti-Competitive Legislation"
 description: | 
-    I build a legal text classifier that correctly identifies up to 97% of paragraphs with potentially problematic provisions.
+    I build a legal text classifier that correctly identifies up to 98% of paragraphs with potentially problematic provisions.
 date: 2023-05-13
 format: html
 image: images/main.gif
 ---
 
-Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new and existing policies for anti-competitive provisions. **Competition Impact Assessment (CIA)** studies are necessary for ensuring that regulations strike a balance between meeting different sector objectives and preserving a competitive market environment.
+Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new and existing policies for anti-competitive provisions. **Competition Impact Assessment (CIA)** studies are necessary for ensuring that regulations strike a balance between meeting sector-specific objectives and preserving a competitive market environment.
 
-Ideally, most laws should be subjected to CIA and other types of regulatory assessments. But this is a time-consuming exercise: an **initial review alone can take 2-4 months**, according to an OECD[^1] representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment is great. Having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand experience of how such undertakings can severely strain resources.
+Ideally, most laws should be subjected to CIA and other types of regulatory assessments. But this is a time-consuming exercise: an **initial review alone can take 2-4 months**, according to an OECD[^1] representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an **efficient approach to competition impact assessment** is great. Having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand experience of how such undertakings can severely strain resources.
 
 [^1]: Organisation for Economic Co-operation and Development
 
-Recent years have shown that machine learning and AI, particularly large language models (LLM), can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrate in my master's thesis. AI is no replacement for an expert's thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial screening, with only those having problematic provisions meriting further review. Workloads would be significantly reduced.
+Recent years have shown that machine learning and AI, particularly large language models (LLM), can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrated in my master's thesis. I developed a **pre-screening tool** that (1) identifies legislation containing potentially anti-competitive provisions, and (2) categorizes these provisions into different types of restrictions that need to be flagged to CIA proponents.
 
-For my model, I use a database of **legislative documents** in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually labeled based on the 4 categories identified in the <a class='second-hover' href='https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf'>CIA checklist</a> of the OECD:
+AI is no replacement for an expert's thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial assessment, with **only those having problematic provisions meriting further review**. Workloads would be significantly reduced. The machine learning models I trained were able to **correctly classify up to 98% of text with restrictive provisions** and **accurately assign up to 77% of provisions to their respective categories**.
+
+###### [Data: a corpus of legal documents]{.second-color}
+
+For my models, I used a database of **legislative documents** in countries where a round of OECD CIA studies was conducted. In all, I gathered a corpus of 273 texts from 7 countries. Each unstructured PDF was parsed to extract paragraphs containing relevant textual information, resulting in a total of 7,335 unique paragraphs of which 2,104 have been manually labeled based on the 4 categories identified in the <a class='second-hover' href='https://www.oecd.org/daf/competition/oecd-competition-assessment-checklist-en.pdf'>CIA checklist</a> of the OECD:
 
 |     |                         Category                          |                                               Sub-categories                                                |
 |:----------------:|:-----------------:|:---------------------------------:|
@@ -26,24 +30,52 @@ For my model, I use a database of **legislative documents** in countries where a
 
 Category D is lumped together with other miscellaneous provisions into a new category called *Others*. If the paragraph does not relate to any of the 4 categories, it is assigned a label of *None*. A good amount of processing had to be conducted to prepare the data for modeling. I discuss the data preparation step and provide an sample of the labeled dataset in <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>this post</a>.
 
-Automating the initial screening of documents for CIA can be divided into two parts. First is identifying whether a law has provisions with potential anti-competitive effects. This is a yes or no question that can be framed as a binary classification task. Second: distinguishing between multiple categories of restrictions in laws that have been flagged in the first step. I treat this as a multi-class task.
+```{=html}
+<!-- ###### [The problem: automation of document classification]{.second-color}
 
+Automating the initial screening of documents for CIA can be divided into two parts. First is identifying whether a law has provisions with potential anti-competitive effects. This is a yes or no question that can be framed as a binary classification task. Second: distinguishing between multiple categories of restrictions in laws that have been flagged in the first step. I treat this as a multi-class task. -->
+```
 ###### [Binary classification: is the law potentially anti-competitive?]{.second-color}
 
-To get the outcome variable for the binary classification task, all four categories are encoded as 1 or *with restrictions* and none as 0 or *no restrictions*. From here, I build the text classification pipeline. A key step is extracting *features* from the text. In NLP, **feature extraction** involves representing raw text as numerical values that can be understood and processed by machines. I use two approaches to do this - **count-based** and **distributed** representations. Count-based features rely on the **frequency** of words appearance in a document or corpus, while distributed representations or **word embeddings** are n-dimensional vectors that capture the **semantic and syntactic** characteristics of words. Unigrams and n-grams are count-based representations[^2], while GloVe and Legal Word2Vec are word embeddings.
+Automating the initial screening of documents for CIA can be divided into two parts. The first task is identifying whether a law has provisions with potential anti-competitive effects. This is a yes or no question that I framed as a binary classification problem. To get the outcome variable, all four categories were encoded as [*with restrictions*]{.underline} and none as [*no restrictions*]{.underline}.
 
-[^2]: In particular, I used TF-IDF (term frequency inverse document frequency) with single words and phrases 2 to 5 words in length.
+From here, I created a text classification pipeline starting with extracting *features* from the text. In NLP, **feature extraction** involves representing raw text as numerical values that can be understood and processed by machines. There are two main approaches to this: **count-based** and **distributed** representations. Count-based features rely on the **frequency** of word appearance in a document or corpus, while distributed representations or **word embeddings** are n-dimensional vectors that capture the **semantic and syntactic** characteristics of words. I used unigrams and n-grams for count-based representations[^2], and GloVe and Legal Word2Vec for word embeddings[^3].
 
-I use these input features to train and validate machine learning models with different specifications. For the binary task, I use logistic regression as benchmark and **support vector machine (SVM)** as the main model. Logistic regression is a widely popular technique for classification tasks because it is easy to implement and interpret. The model assumes a linear relationship among features and calculates the probability of an observation belonging to a certain category based on the appearance of these features. SVMs are more versatile and are capable of understanding non-linear relationships in the data.
+[^2]: In particular, a TF-IDF (term frequency inverse document frequency) matrix. Unigrams are single words, while n-grams are phrases that are 2 to 5 words in length.
+
+[^3]: GloVe embeddings can be downloaded <a href='https://nlp.stanford.edu/projects/glove/'>here </a> and Legal Word2Vec can be downloaded <a href='https://osf.io/qvg8s/'>here</a>.
+
+I used these input features to train and validate machine learning models under different specifications, with logistic regression as benchmark and **support vector machine (SVM)** as the main model. Logistic regression is a widely popular technique for classification tasks because it is easy to implement and interpret. The model assumes a linear relationship among features and calculates the probability of an observation belonging to a certain category based on the appearance of these features. SVMs are more versatile and are capable of understanding non-linear relationships in data.
 
 The figure below shows the results of the different models I ran for the binary classification task. Model predictions are represented as a **confusion matrix**. The upper right quadrant shows the **number of paragraphs with restrictions correctly classified by the model** (true positives), while the lower left quadrant shows the **number of paragraphs without restrictions correctly classified by the model** (true negatives).
 
-Aside from maximizing these two metrics, it is also important to minimize to the lower right quadrant which shows **false negatives**. For this particular use case, documents that are classified as *no restrictions* will not be further reviewed by experts. Laws could be inaccurately tagged as not problematic when there are, in fact, provisions that could restrict competition.
+Aside from maximizing these two metrics, it is also important to minimize to the lower right quadrant which shows **false negatives**. For this particular use case, documents that are classified as *no restrictions* will not be further reviewed by experts. Laws could be inaccurately tagged as not problematic when they in fact contain provisions that could restrict competition.
 
-![](images/01%20binary.png){width="75%" fig-align="center"}
+![](images/01%20binary.png){width="90%" fig-align="center"}
 
-\[Results: binary classifier, full classifier\]
+The best binary classifiers[^4] can **identify 94 to 98%**[^5] **of paragraphs with potentially anti-competitive provisions**.
+
+[^4]: More than 4,200 binary model specifications were trained and tested using different hyperparameter combinations. The best models were selected through a grid search algorithm.
+
+[^5]: Given by the formula $TP / (TP + FN)$
+
+###### [Multi-class classification: what kind of anti-competitive provisions?]{.second-color}
+
+The second part of the screening process involves **categorizing paragraphs based on the type of restrictions present in the text** – essentially a multi-class classification task[^6]. This function is beneficial to practitioners in cases where specific types of anti-competitive provisions need to be prioritized.
+
+[^6]: In multi-class problems, labels are mutually exclusive so only one label is assigned per text. In reality, there could be more than one label per document (a multi-label problem). But for demonstration purposes, I choose to the simpler multi-class specification.
+
+The same input features (unigrams, n-grams, GloVe, Legal Word2Vec) were applied to the multi-class equivalent of the logistic and SVM models[^7]. The results are evaluated using **precision** and **recall** metrics. As with the binary classifiers, it is important to **minimize false negatives.** This is demonstrated in **high recall scores** (the proportion of true positives out of all actual positives).
+
+[^7]: Softmax and multi-class support vector machines
+
+The figure below shows the performance of the best classifiers. Overall, the models were able to **correctly classify the type of restrictions in up to 77% of texts**. However, it is noticeable that the performance varies across categories. Classifiers were able to accurately identify up to **80% of paragraphs belonging to category A**, and up to **68% of paragraphs belonging to category B**. The poor performance for categories C and Others can mostly be attributed to data imbalance, which I discuss in more detail in the <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>data post</a>.
+
+![](images/02%20multi.png){width="75%" fig-align="center"}
+
+###### [Semantic similarity approach: when labels are not available]{.second-color}
+
+![](images/03%20sbert.png){width="75%" fig-align="center"}
 
 The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of deep learning models, the time spent on repetitive can be greatly reduced, allowing human minds to focus on deeper analytical tasks.
 
-![](images/03%20sbert.png){width="75%" fig-align="center"}
