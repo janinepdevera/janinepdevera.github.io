@@ -6,8 +6,8 @@ website:
   title: "Janine De Vera"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      # - href: index.qmd
+      #   text: Home
       - href: about.qmd
         text: About
       - href: portfolio.qmd

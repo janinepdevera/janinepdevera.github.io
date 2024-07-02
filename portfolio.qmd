@@ -11,4 +11,4 @@ title-block-banner: false
 ---
 
 # [Portfolio]{.second-color}
-Some description here
+Here I talk about some research endeavors and projects I've done in the past - in school, at work, or just out of curiousity. 
