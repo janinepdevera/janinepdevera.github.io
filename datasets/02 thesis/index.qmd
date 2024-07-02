@@ -52,7 +52,7 @@ The outcome labels are based on the OECD's <a class='third-hover' href='https://
 |  A  |          Limits the number or range of suppliers          |               Exclusivity rights, licenses and permits, cost of entry, geographical barriers                |
 |  B  |        Limits the ability of suppliers to compete         |       Price regulation, advertising restrictions, unduly strict quality standards, cost of production       |
 |  C  |       Reduces the incentive of suppliers to compete       | Self- or co-regulatory regimes, publishing of sensitive business information, exemption from antitrust laws |
-|  D  | Limits the choices and information available to customers |                        Buyer-seller information assymetry, consumer switching costs                         |
+|  D  | Limits the choices and information available to customers |                        Buyer-seller information asymmetry, consumer switching costs                         |
 
 Paragraphs from the legal text corpus are assigned to one of the four categories. The initial assignments are based on manual annotations by the OECD, published in existing <a class='third-hover' href='https://www.oecd.org/daf/competition/assessment-toolkit.htm'>CIA reports</a>. Most of these are hard coded in PDF files and had to be parsed and re-encoded. 
 

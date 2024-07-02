@@ -234,50 +234,40 @@ div.tippy-content a:hover {
 
 // hover on navbar
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-  color: $blue2;
+  color: $primary;
 }
 .navbar-expand-lg .navbar-nav .nav-link.active {
-  color: $blue2;
+  color: $primary;
 }
 
 // then override colors so they match cards
 #navbarCollapse > ul > li:nth-child(2) > a:hover,
 #navbarCollapse > ul > li:nth-child(4) > a:hover {
-  color: $primary;
+  color: $second-color;
 }
 
 #navbarCollapse > ul > li:nth-child(2) > a.nav-link.active,
 #navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
-  color: $primary;
+  color: $second-color;
 }
 
 #navbarCollapse > ul > li:nth-child(3) > a:hover,
 #navbarCollapse > ul > li:nth-child(5) > a:hover {
-  color: $second-color;
+  color: $third-color;
 }
 
 #navbarCollapse > ul > li:nth-child(3) > a.nav-link.active,
 #navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
-  color: $second-color;
+  color: $third-color;
 }
 
 #navbarCollapse > ul > li:nth-child(4) > a:hover,
 #navbarCollapse > ul > li:nth-child(6) > a:hover {
-  color: $third-color;
+  color: $fourth-color;
 }
 
 #navbarCollapse > ul > li:nth-child(4) > a.nav-link.active,
 #navbarCollapse > ul > li:nth-child(6) > a.nav-link.active {
-  color: $third-color;
-}
-
-#navbarCollapse > ul > li:nth-child(5) > a:hover,
-#navbarCollapse > ul > li:nth-child(7) > a:hover {
-  color: $fourth-color;
-}
-
-#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(7) > a.nav-link.active {
   color: $fourth-color;
 }
 
@@ -298,7 +288,7 @@ div.tippy-content a:hover {
     left: 0;
     right: 0;
     margin: auto;
-    background-color: $blue2;
+    background-color: $primary;
     width: 0%;
     content: "";
     height: 4px;
@@ -307,21 +297,16 @@ div.tippy-content a:hover {
   
   .navbar .navbar-nav .nav-item:nth-child(2)::after, 
   .navbar .navbar-nav .nav-item:nth-child(4)::after {
-    background-color: $primary;
+    background-color: $second-color;
   }
 
   .navbar .navbar-nav .nav-item:nth-child(3)::after, 
   .navbar .navbar-nav .nav-item:nth-child(5)::after {
-    background-color: $second-color;
+    background-color: $third-color;
   }
   
   .navbar .navbar-nav .nav-item:nth-child(4)::after, 
   .navbar .navbar-nav .nav-item:nth-child(6)::after {
-    background-color: $third-color;
-  }
-  
-  .navbar .navbar-nav .nav-item:nth-child(5)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(7)::after {
     background-color: $fourth-color;
   }
 
