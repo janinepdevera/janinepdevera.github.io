@@ -2,14 +2,14 @@
   {
     "listing": "/portfolio.html",
     "items": [
-      "/posts/01 thesis/index.html"
+      "/posts/legal-text-classification/index.html"
     ]
   },
   {
     "listing": "/datasets.html",
     "items": [
-      "/datasets/01 dsa/index.html",
-      "/datasets/02 thesis/index.html"
+      "/datasets/digital-policy-communications/index.html",
+      "/datasets/labeled-legal-texts/index.html"
     ]
   }
 ]

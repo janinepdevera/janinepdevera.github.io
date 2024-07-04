@@ -28,7 +28,7 @@ For my models, I used a database of **legislative documents** in countries where
 |  C  |       Reduces the incentive of suppliers to compete       | Self- or co-regulatory regimes, publishing of sensitive business information, exemption from antitrust laws |
 |  D  | Limits the choices and information available to customers |                        Buyer-seller information asymmetry, consumer switching costs                         |
 
-Category D is lumped together with other miscellaneous provisions into a new category called *Others*. If a paragraph does not relate to any of the 4 categories, it is assigned a label of *None*. A good amount of processing had to be conducted to prepare the data for modeling. I discuss the data preparation step and provide an sample of the labeled dataset in <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>this post</a>.
+Category D is lumped together with other miscellaneous provisions into a new category called *Others*. If a paragraph does not relate to any of the 4 categories, it is assigned a label of *None*. A good amount of processing had to be conducted to prepare the data for modeling. I discuss the data preparation step and provide an sample of the labeled dataset in <a class='second-hover' href='../../datasets/labeled-legal-texts/index.qmd'>this post</a>.
 
 ```{=html}
 <!-- ###### [The problem: automation of document classification]{.second-color}
@@ -73,7 +73,7 @@ The same input features (unigrams, n-grams, GloVe, Legal Word2Vec) were applied 
 
 [^9]: $TP / (TP + FN)$
 
-The figure below shows the performance of the best classifiers. Overall, the models were able to **correctly categorize the type of restrictions in up to 77% of texts**. However, it is noticeable that the performance varies across categories. Classifiers were able to accurately identify up to **80% of paragraphs belonging to category A**, and up to **68% of paragraphs belonging to category B**. The subpar performance for categories C and Others can be attributed to data imbalance, which I discuss in more detail in the <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>data post</a>. Overall, the performance of the multi-class models are comparable with similar legal text classification studies[^10].
+The figure below shows the performance of the best classifiers. Overall, the models were able to **correctly categorize the type of restrictions in up to 77% of texts**. However, it is noticeable that the performance varies across categories. Classifiers were able to accurately identify up to **80% of paragraphs belonging to category A**, and up to **68% of paragraphs belonging to category B**. The subpar performance for categories C and Others can be attributed to data imbalance, which I discuss in more detail in the <a class='second-hover' href='../../datasets/labeled-legal-texts/index.qmd'>data post</a>. Overall, the performance of the multi-class models are comparable with similar legal text classification studies[^10].
 
 [^10]: Such as <a href='https://arxiv.org/abs/2010.12871'>Shaheen, Wohlgenannt, and Filtz (2020)</a> and <a href='https://ceur-ws.org/Vol-2826/T1-7.pdf'> Gao, et. al. (2020)</a>.
 
