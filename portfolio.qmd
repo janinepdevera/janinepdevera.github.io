@@ -1,7 +1,7 @@
 ---
 title: "Portfolio"
 listing: 
-  contents: posts
+  contents: portfolio
   type: grid
   sort: "date desc"
   filter-ui: false 

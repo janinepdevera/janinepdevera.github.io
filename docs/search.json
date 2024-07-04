@@ -194,5 +194,19 @@
     "title": "Legal Texts for Competition Impact Assessment",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThe countries included are Brazil, Brunei, Indonesia, Malaysia, Mexico, Philippines, Singapore↩︎\nThe initial distribution of labels is category A: 48%, B: 11%, C: 2%, Others: 3%, None: 36%↩︎\nBack translation is only applied to the training set (excludes the test set to avoid data leakage)↩︎"
+  },
+  {
+    "objectID": "portfolio/legal-text-classification/index.html",
+    "href": "portfolio/legal-text-classification/index.html",
+    "title": "Using AI to Detect Anti-Competitive Legislation",
+    "section": "",
+    "text": "Competition is at the heart of consumer welfare. This is why in many countries, competition bodies assess new and existing policies for anti-competitive provisions. Competition Impact Assessment (CIA) studies are necessary for ensuring that regulations strike a balance between meeting sector-specific objectives and preserving a competitive market environment.\nIdeally, most laws should be subjected to CIA and other types of regulatory assessments. But this is a time-consuming exercise: an initial review alone can take 2-4 months, according to an OECD1 representative I spoke to. With hundreds of new laws and regulations proposed in any given country each year, the need for an efficient approach to competition impact assessment is great. Having myself worked in the Philippine Competition Commission for nearly 4 years, I have first-hand experience of how such undertakings can severely strain resources.\nRecent years have shown that machine learning and AI, particularly large language models (LLM), can greatly aid in processing massive amounts of textual data. Legal texts are no exception, and this is precisely what I demonstrated in my master’s thesis. I developed a pre-screening tool that (1) identifies legislation containing potentially anti-competitive provisions, and (2) categorizes these provisions into different types of restrictions that need to be flagged to CIA proponents.\nAI is no replacement for an expert’s thorough assessment, and when enacting policies with wide-ranging ramifications, human judgment must remain the final arbiter. But automation can be useful as a means of initial assessment, with only those having problematic provisions meriting further review. Workloads would be significantly reduced. The machine learning models I trained were able to correctly classify up to 98% of text with restrictive provisions and accurately assign up to 77% of provisions to their respective categories."
+  },
+  {
+    "objectID": "portfolio/legal-text-classification/index.html#footnotes",
+    "href": "portfolio/legal-text-classification/index.html#footnotes",
+    "title": "Using AI to Detect Anti-Competitive Legislation",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOrganisation for Economic Co-operation and Development↩︎\nIn particular, a TF-IDF (term frequency inverse document frequency) matrix. Unigrams are single words, while n-grams are phrases that are 2 to 5 words in length.↩︎\nGloVe embeddings can be downloaded here  and Legal Word2Vec can be downloaded here.↩︎\nMore than 4,200 binary model specifications were trained and tested using different hyperparameter combinations. The best models were selected through a grid search algorithm.↩︎\nGiven by the formula \\(TP / (TP + FN)\\)↩︎\nIn multi-class problems, labels are mutually exclusive so only one label is assigned per text. In reality, there could be more than one label per document (a multi-label problem). But for demonstration purposes, I choose to the simpler multi-class specification.↩︎\nSoftmax and multi-class support vector machines↩︎\n\\(TP / (TP + FP)\\)↩︎\n\\(TP / (TP + FN)\\)↩︎\nSuch as Shaheen, Wohlgenannt, and Filtz (2020) and  Gao, et. al. (2020).↩︎"
   }
 ]
