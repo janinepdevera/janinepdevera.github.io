@@ -65,15 +65,17 @@ The second part of the screening process involves **categorizing paragraphs base
 
 [^6]: In multi-class problems, labels are mutually exclusive so only one label is assigned per text. In reality, there could be more than one label per document (a multi-label problem). But for demonstration purposes, I choose to the simpler multi-class specification.
 
-The same input features (unigrams, n-grams, GloVe, Legal Word2Vec) were applied to the multi-class equivalent of the logistic and SVM models[^7]. The results were evaluated using **precision** (the proportion of true positives out of all predicted positives) and **recall** (the proportion of true positives out of all actual positives) metrics[^8]. As with the binary classifiers, it is important to **minimize false negatives.** This is demonstrated in **high recall scores**.
+The same input features (unigrams, n-grams, GloVe, Legal Word2Vec) were applied to the multi-class equivalent of the logistic and SVM models[^7]. The results were evaluated using **precision**[^8] (the proportion of true positives out of all predicted positives) and **recall**[^9] (the proportion of true positives out of all actual positives). As with the binary classifiers, it is important to **minimize false negatives.** This is demonstrated in **high recall scores**.
 
 [^7]: Softmax and multi-class support vector machines
 
-[^8]: Precision and recall can be calculated from the confusion matrix. Precision is $TP / (TP + FP)$ and recall is $TP / (TP + FN)$
+[^8]: $TP / (TP + FP)$
 
-The figure below shows the performance of the best classifiers. Overall, the models were able to **correctly categorize the type of restrictions in up to 77% of texts**. However, it is noticeable that the performance varies across categories. Classifiers were able to accurately identify up to **80% of paragraphs belonging to category A**, and up to **68% of paragraphs belonging to category B**. The subpar performance for categories C and Others can be attributed to data imbalance, which I discuss in more detail in the <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>data post</a>. Overall, the performance of the multi-class models are comparable with similar legal text classification studies[^9].
+[^9]: $TP / (TP + FN)$
 
-[^9]: Such as <a href='https://arxiv.org/abs/2010.12871'>Shaheen, Wohlgenannt, and Filtz (2020)</a> and <a href='https://ceur-ws.org/Vol-2826/T1-7.pdf'> Gao, et. al. (2020)</a>.
+The figure below shows the performance of the best classifiers. Overall, the models were able to **correctly categorize the type of restrictions in up to 77% of texts**. However, it is noticeable that the performance varies across categories. Classifiers were able to accurately identify up to **80% of paragraphs belonging to category A**, and up to **68% of paragraphs belonging to category B**. The subpar performance for categories C and Others can be attributed to data imbalance, which I discuss in more detail in the <a class='second-hover' href='../../datasets/02 thesis/index.qmd'>data post</a>. Overall, the performance of the multi-class models are comparable with similar legal text classification studies[^10].
+
+[^10]: Such as <a href='https://arxiv.org/abs/2010.12871'>Shaheen, Wohlgenannt, and Filtz (2020)</a> and <a href='https://ceur-ws.org/Vol-2826/T1-7.pdf'> Gao, et. al. (2020)</a>.
 
 ![](images/02%20multi.png){width="75%" fig-align="center"}
 
@@ -87,8 +89,8 @@ To implement this, I created **verbalized labels**. Instead of using a categoric
 
 The embeddings used to calculate similarity scores were derived from variants of the widely popular **Bidirectional Encoder Representations from Transformers or** <a class='second-hover' href='https://arxiv.org/pdf/1810.04805'>BERT</a>. The first model applied pre-trained Sentence BERT (SBERT) embeddings. In the second model, the embeddings were improved using a technique called **domain adaptive pre-training**. This step introduces additional information specific to the *legal* text corpus, as opposed to relying on the more generic embeddings from base BERT. 
 
-The figure below shows the results of this threshold-based classification using the STS approach. As expected, the model with domain adaptive pre-training was able to correctly classify more paragraphs with restrictions. The model has a **weighted average recall of 81% across all categories** -- it is able to correctly classify the type of restrictions in up to 81% of texts. It also outperforms the previous models in the underrepresented categories, C and Others. 
+The figure below shows the results of this threshold-based classification using STS. As expected, the model with domain adaptive pre-training was able to correctly classify more paragraphs with restrictions. The model has a **weighted average recall of 81% across all categories** -- it is able to correctly classify the type of restrictions in up to 81% of texts. It also outperforms the previous models in the underrepresented categories, C and Others. 
 
 ![](images/04 sbert-results.png){width="75%" fig-align="center"}
 
-The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of deep learning models, the time spent on repetitive can be greatly reduced, allowing human minds to focus on deeper analytical tasks.
+The results of this study demonstrate how AI can benefit the legal profession. The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of machine and deep learning models, the time spent on repetitive tasks can be greatly reduced, allowing human minds to focus on deeper analytical work.
