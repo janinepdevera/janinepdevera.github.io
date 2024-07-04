@@ -94,3 +94,5 @@ The figure below shows the results of this threshold-based classification using 
 ![](images/04 sbert-results.png){width="75%" fig-align="center"}
 
 The results of this study demonstrate how AI can benefit the legal profession. The applications of a text classifier extend beyond competition regulation. The same principle can be used to detect provisions relating to any number of policy outcomes, from climate to migration. Through the creative application of machine and deep learning models, the time spent on repetitive tasks can be greatly reduced, allowing human minds to focus on deeper analytical work.
+
+More details about this project can be found in this <a class='second-hover' href='https://github.com/janinepdevera/legal-text-classification-CIA'> {{< fa brands github >}} repository</a>. 
