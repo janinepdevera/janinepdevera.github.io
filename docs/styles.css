@@ -102,7 +102,7 @@ div.listing-date {
 /* tables */
 
 .table {
-    font-size: 14px;
+    font-size: 12.5px;
 }
 
 div.dt-layout-row.dt-layout-table {
@@ -117,6 +117,16 @@ table td {
 
 button.dt-paging-button {
     font-size: 12px;
+}
+
+/* lists */
+
+#quarto-document-content ul p {
+    font-size: 13px;
+}
+
+#quarto-document-content ul li {
+    font-size: 13px;
 }
 
 /* footnotes */

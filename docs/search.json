@@ -32,7 +32,7 @@
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Portfolio\nHere I talk about some research endeavors and projects I’ve done in the past - in school, at work, or just out of curiousity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing AI to Detect Anti-Competitive Legislation\n\n\nI build a legal text classifier that correctly identifies up to 98% of paragraphs with potentially problematic provisions.\n\n\n\n\n\n\nMay 13, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Portfolio\nHere I talk about some research endeavors and projects I’ve done in the past - in school, at work, or just out of curiousity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing AI to Detect Anti-Competitive Legislation\n\n\nI build a legal text classifier that correctly identifies up to 98% of paragraphs with potentially problematic provisions.\n\n\n\n\n\n\nMay 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrade Agreements As Social Networks\n\n\nI explore the dynamics of deep trade agreement formation using social network analysis concepts – homophily and transitivity.\n\n\n\n\n\n\nMay 1, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/thesis.html",
@@ -208,5 +208,19 @@
     "title": "Using AI to Detect Anti-Competitive Legislation",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nOrganisation for Economic Co-operation and Development↩︎\nIn particular, a TF-IDF (term frequency inverse document frequency) matrix. Unigrams are single words, while n-grams are phrases that are 2 to 5 words in length.↩︎\nGloVe embeddings can be downloaded here  and Legal Word2Vec can be downloaded here.↩︎\nMore than 4,200 binary model specifications were trained and tested using different hyperparameter combinations. The best models were selected through a grid search algorithm.↩︎\nGiven by the formula \\(TP / (TP + FN)\\)↩︎\nIn multi-class problems, labels are mutually exclusive so only one label is assigned per text. In reality, there could be more than one label per document (a multi-label problem). But for demonstration purposes, I choose to the simpler multi-class specification.↩︎\nSoftmax and multi-class support vector machines↩︎\n\\(TP / (TP + FP)\\)↩︎\n\\(TP / (TP + FN)\\)↩︎\nSuch as Shaheen, Wohlgenannt, and Filtz (2020) and  Gao, et. al. (2020).↩︎"
+  },
+  {
+    "objectID": "portfolio/trade-networks/index.html",
+    "href": "portfolio/trade-networks/index.html",
+    "title": "Trade Agreements As Social Networks",
+    "section": "",
+    "text": "Human life is surrounded and governed by systems that are “hopelessly complicated” 1. Our brain functions are determined by billions of interconnected neurons. How we talk and understand language is based on complex relationships between millions of words. The activities we conduct on our cell phones are determined by an elaborate interaction between thousands of computers and satellites.\nThese complex systems are notoriously hard to understand, but they all have underlying networks that determine how pieces in the system interact. Network science is a relatively new discipline that aims to understand complex systems by studying their elements and the connections between them.\nRelationships between countries and the exchange of goods and services across borders is an example of a network. Official agreements that countries enter into to facilitate trade and deepen economic cooperation can also be analyzed as a network. In fact, trade agreement formation may actually be better understood through network analysis compared to the more traditional regression-based gravity model. This is because network analysis is able to capture one important fact: the relationship between two countries is also influenced by their relationship with other nations.\nIn this study, I explored the dynamics of a particular set of free trade agreements – deep FTAs – and found that their creation is actually quite similar to how we make social connections. The social network concepts of transitivity and homophily are both observed in deep FTA networks. The phrases “a friend of a friend is a friend” and “birds of a feather flock together” also apply to how countries choose trade partners. In particular, similarities in political institutions attract countries to potentially deep FTA partners."
+  },
+  {
+    "objectID": "portfolio/trade-networks/index.html#footnotes",
+    "href": "portfolio/trade-networks/index.html#footnotes",
+    "title": "Trade Agreements As Social Networks",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAlbert-László Barabási in Network Science.↩︎\nThe main text, including the title and signature pages, is 8,186 words long. The document can be accessed here.↩︎\nThe main text, including the title and signature pages, is 47,505 words long. The document can be accessed here.↩︎\nNon-economic policies are defined in this paper.↩︎\nIf a country belongs to a multiparty agreement (e.g. ASEAN), each bilateral partnership (e.g. Singapore-Philippines, Singapore-Malaysia, Singapore-Thailand) is counted as one connection.↩︎\nThe application of this method to trade agreements was first explored in this publication.↩︎\nLog-odds ratios expressed as a probabilities↩︎\nIn the full network, a country pair being both democracies only makes it 60% more likely for a FTA to form.↩︎\nA trade agreement between two countries in the same region is 92% more likely than between countries from different region. In the deep trade network, belonging to the same region only makes in 82% more likely for a FTA to form.↩︎"
   }
 ]

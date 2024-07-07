@@ -1,0 +1,18 @@
+---
+title: "Network of Trade Agreements"
+# description: | 
+#     A labeled dataset of more than 4000 paragraphs mapped to different categories of potentially anticompetitive provisions
+format: 
+    html:
+        code-fold: true
+        code-summary: "Show code"
+# image: images/thumbnail.jpg
+jupyter: 
+    kernelspec:
+        name: "website"
+        language: "python"
+        display_name: "website"
+draft: true
+---
+
+The main data for this analysis comes from the <a class='second-hover' href='https://datatopics.worldbank.org/dta/table.html'>**Horizontal Trade Agreements Database**</a> compiled by the World Bank. This dataset contains all trade agreements notified to the WTO as of 2015. For each agreement, information on trade partners, year of enforcement, trade agreement type, and presence or absence of 52 key PTA provisions are provided. The database contains 189 countries, 261 unique agreements, and 3,141 bilateral partnerships observed over the course of 57 years from 1958 to 2015. 
