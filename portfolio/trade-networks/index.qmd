@@ -13,9 +13,9 @@ date: 2023-05-01
 
 **Network science** aims to understand systems that are "hopelessly complicated" [^1], from brain neurons to words in a language. One such system is the **formation of trade agreements** between countries. Indeed, since the relationship between two countries is often also influenced by their relationship with others, network analysis is a potent tool for uncovering new insights on top of the traditional regression-based gravity model.
 
-<!-- Relationships between countries and the exchange of goods and services across borders is an example of a network. Official **agreements** that countries enter into to facilitate trade and deepen economic cooperation can also be analyzed as a network. In fact, **trade agreement formation** may actually be **better understood through network analysis** compared to the more traditional regression-based gravity model. This is because network analysis is able to capture one important fact: the relationship between two countries is also influenced by their relationship with other nations. -->
-
 [^1]: Albert-László Barabási in <a href='http://networksciencebook.com/'>Network Science</a>.
+
+<!-- Relationships between countries and the exchange of goods and services across borders is an example of a network. Official **agreements** that countries enter into to facilitate trade and deepen economic cooperation can also be analyzed as a network. In fact, **trade agreement formation** may actually be **better understood through network analysis** compared to the more traditional regression-based gravity model. This is because network analysis is able to capture one important fact: the relationship between two countries is also influenced by their relationship with other nations. -->
 
 In this study, I explored the dynamics of a particular set of free trade agreements -- **deep FTAs** -- and found that their creation is actually quite similar to how we make social connections. The social network concepts of **transitivity** and **homophily** are both observed in deep FTA networks. The phrases "a friend of a friend is a friend" and "birds of a feather flock together" also apply to how countries choose trade partners. In particular, similarities in political institutions attract countries to potentially deep FTA partners.
 
@@ -89,13 +89,13 @@ The figure below shows the results of ERG models fitted to (1) the **full trade 
 
 There are **three key takeaways** from these results:
 
-1.  **Transitivity** plays a key role in trade agreement formation. If countries A and B both have bilateral agreements with country C, it is 50%[^7] more likely that A and B will also sign a FTA with each other, compared to a scenario where their common connection with C does not exist.
+1.  **Transitivity** plays a key role in trade agreement formation. If countries A and B both have bilateral agreements with country C, it is 66%[^7] more likely that A and B will also sign a FTA with each other, compared to a scenario where their common connection with C does not exist.
 
 2.  **Political freedom** is the **most important determinant** of deep trade agreement formation. The likelihood of a deep FTA between two countries that are **both politically free** (i.e. democracies) is 91% higher than two countries where only one or none is considered free[^8]. In contrast, **region** is the most important factor in the full trade network[^9].
 
 3.  Deep trade agreements are more likely to form between countries with **different income classes**. Economies belonging to the same class are 62% less likely to form deep FTAs compared to countries that are from different income classes.
 
-[^7]: Log-odds ratios expressed as a probabilities
+[^7]: The ERG model coefficients are **log-odds ratios** which can be converted to probabilities using the inverse logit function $exp(x)/(1+exp(x))$. The log-odds ratio for transitivity is 0.694.
 
 [^8]: In the full network, a country pair being both democracies only makes it 60% more likely for a FTA to form.
 
