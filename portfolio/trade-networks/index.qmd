@@ -1,43 +1,45 @@
 ---
-title: "Trade Agreements As Social Networks"
+title: "Friendly Countries Make Deep Trade Agreements"
 description: | 
-    I explore the dynamics of deep trade agreement formation using social network analysis concepts -- transitivity and homophily.
+    Through network analysis, I find that deep trade agreements are less about economics and more about politics
 format: html
 image: network.gif
 date: 2023-05-01
 ---
 
-Human life is surrounded and governed by systems that are *"hopelessly complicated"* [^1]. Our brain functions are determined by billions of interconnected neurons. How we talk and understand language is based on complex relationships between millions of words. The activities we conduct on our cell phones are determined by an elaborate interaction between thousands of computers and satellites.
+<!-- Human life is surrounded and governed by systems that are *"hopelessly complicated"* [^1]. Our brain functions are determined by billions of interconnected neurons. How we talk and understand language is based on complex relationships between millions of words. The activities we conduct on our cell phones are determined by an elaborate interaction between thousands of computers and satellites. -->
+
+<!-- These **complex systems** are notoriously hard to understand, but they all have underlying **networks** that determine how pieces in the system interact. **Network science** is a relatively new discipline that aims to understand complex systems by studying their elements and the connections between them. -->
+
+**Network science** aims to understand systems that are "hopelessly complicated" [^1], from brain neurons to words in a language. One such system is the **formation of trade agreements** between countries. Indeed, since the relationship between two countries is often also influenced by their relationship with others, network analysis is a potent tool for uncovering new insights on top of the traditional regression-based gravity model.
+
+<!-- Relationships between countries and the exchange of goods and services across borders is an example of a network. Official **agreements** that countries enter into to facilitate trade and deepen economic cooperation can also be analyzed as a network. In fact, **trade agreement formation** may actually be **better understood through network analysis** compared to the more traditional regression-based gravity model. This is because network analysis is able to capture one important fact: the relationship between two countries is also influenced by their relationship with other nations. -->
 
 [^1]: Albert-László Barabási in <a href='http://networksciencebook.com/'>Network Science</a>.
-
-These **complex systems** are notoriously hard to understand, but they all have underlying **networks** that determine how pieces in the system interact. **Network science** is a relatively new discipline that aims to understand complex systems by studying their elements and the connections between them.
-
-Relationships between countries and the exchange of goods and services across borders is an example of a network. Official **agreements** that countries enter into to facilitate trade and deepen economic cooperation can also be analyzed as a network. In fact, **trade agreement formation** may actually be **better understood through network analysis** compared to the more traditional regression-based gravity model. This is because network analysis is able to capture one important fact: the relationship between two countries is also influenced by their relationship with other nations.
 
 In this study, I explored the dynamics of a particular set of free trade agreements -- **deep FTAs** -- and found that their creation is actually quite similar to how we make social connections. The social network concepts of **transitivity** and **homophily** are both observed in deep FTA networks. The phrases "a friend of a friend is a friend" and "birds of a feather flock together" also apply to how countries choose trade partners. In particular, similarities in political institutions attract countries to potentially deep FTA partners.
 
 ###### [Deep trade agreements: a new type of cooperation]{.second-color}
 
-Before the mid 1990s, FTAs mostly involved provisions for facilitating market access and promoting free trade. In the last 30 years, newer forms of cooperation have spread and trade agreements have become *deeper*, making room for provisions outside the scope of the <a class='second-hover' href='https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact1_e.htm'>WTO mandate</a>. More recent agreements cover regulatory standards, intellectual property rights, environment, and migration rules, among other issues. Such trade deals are referred to as <a class='second-hover' href='https://datatopics.worldbank.org/dta/about-the-project.html'>**deep** trade agreements</a>.
+Before the mid-1990s, FTAs mostly involved provisions for facilitating market access and promoting free trade. In the last 30 years, newer forms of cooperation have spread and trade agreements have become *deeper*, making room for provisions outside the scope of the <a class='second-hover' href='https://www.wto.org/english/thewto_e/whatis_e/tif_e/fact1_e.htm'>WTO mandate</a>. More recent agreements cover regulatory standards, intellectual property rights, environment, and migration rules, among other issues. Such trade deals are referred to as <a class='second-hover' href='https://datatopics.worldbank.org/dta/about-the-project.html'>**deep** trade agreements</a>.
 
-As an example, let's compare two trade agreements of the European Union, signed a decade apart. The EU-Israel Free Trade Agreement came into force in 2000 and was one of the Union's first FTA outside of Europe. The main text is only around 8,000[^2] words long and focuses on free movement of goods, specifically on prohibiting quantitative restrictions and customs duties on different types of products. Meanwhile, the EU-Republic of Korea FTA, the Union's first trade deal with an Asian economy which came into effect in 2011, is around 47,000[^3] words long. It covers non-conventional trade topics such as competition policy, e-commerce, gender, and SMEs.
+As an example, let's compare two trade agreements of the European Union, signed a decade apart. The EU--Israel Free Trade Agreement of 2000 was one of the EU's first outside of Europe. The main text is only 8,000[^2] words long and focuses on the free movement of goods, specifically on prohibiting quantitative restrictions and customs duties on different types of products. Meanwhile, the EU--Republic of Korea FTA of 2011, the EU's first with an Asian economy, is 47,000[^3] words long and covers non-conventional trade topics such as competition policy, e-commerce, gender, and SMEs.
 
 [^2]: The main text, including the title and signature pages, is 8,186 words long. The document can be accessed <a href='https://rtais.wto.org/UI/CRShowRTAIDCard.aspx?rtaid=93'>here</a>.
 
 [^3]: The main text, including the title and signature pages, is 47,505 words long. The document can be accessed <a href='https://rtais.wto.org/UI/CRShowRTAIDCard.aspx?rtaid=167'>here</a>.
 
-Deep trade agreements can potentially result in <a class='second-hover' href='https://cepr.org/voxeu/columns/trade-and-welfare-benefits-deep-trade-agreements'>welfare gains</a> for participating economies. Given their recent spread and apparent benefits, it has become important to understand how and why these types of agreements are formed. I used network analysis to model deep trade agreement creation, in an effort to identify **factors that determine the choice of partnerships** in extensive trade deals and how they differ from more traditional FTAs.
+Deep trade agreements can potentially result in <a class='second-hover' href='https://cepr.org/voxeu/columns/trade-and-welfare-benefits-deep-trade-agreements'>welfare gains</a> for participating economies. Given their recent spread and apparent benefits, it has become important to understand how and why these types of agreements are formed. I used network analysis to model deep trade agreement creation in an effort to identify **factors that determine the choice of partnerships** in extensive trade deals and how they differ from more traditional FTAs.
 
 ###### [Network of trade agreements]{.second-color}
 
-The network below illustrates the evolution of trade agreements over the last three decades. Countries are represented as **nodes**, with colors corresponding to broad geographical regions. A **link or edge** between two nodes exist if there is a FTA between a them. **Colored links** are deep trade agreements. It's clear that the network became denser over the years (as more countries signed trade deals), and **deep FTAs became increasingly common**, even between countries belonging to different regions.
+The network below illustrates the evolution of trade agreements over the last three decades. Countries are represented as **nodes**, with colors corresponding to broad geographical regions. A **link or edge** between two nodes exist if there is an FTA between a them. **Colored links** are deep trade agreements. It's clear that not only did the network become denser over time as more countries signed trade deals, **deep FTAs also became increasingly common**, even between countries belonging to different regions.
 
 ![](network.gif){width="80%" fig-align="center"}
 
-This <a class='second-hover' href='https://link.springer.com/article/10.1007/s11151-020-09780-0'>World Bank paper</a> presents various ways to define and measure **depth** of agreements. For this analysis, I focused on deep trade agreements that contain at least one **legally binding non-economic policy**[^4] or one of the provisions below:
+<a class='second-hover' href='https://link.springer.com/article/10.1007/s11151-020-09780-0'>Laget, et al. (2020)</a> present various ways to define and measure the **depth** of agreements. For this analysis, I focused on deep trade agreements that contain a **legally binding** provision on at least one of the following **non-economic policies**[^4]:
 
-[^4]: Non-economic policies are defined in <a href='https://www.nber.org/papers/w22138'>this paper</a>.
+[^4]: Non-economic policies are defined in [Limão (2016)](https://www.nber.org/papers/w22138).
 
 -   Environmental laws
 -   Audiovisual cooperation
@@ -60,13 +62,13 @@ Depth is defined as the **number of** (legally enforceable) **provisions** prese
 
 More details about the sources, features, and process of creating the network dataset can be found in this <a class='second-hover' href='../../datasets/trade-networks-data/index.qmd'>this post</a>.
 
-A common descriptive measure in network analysis is **node degree**. This is a measure of how many direct connections a node has. In the trade agreements network, the degree measures the number of agreements a country has with other economies[^5].
+A common descriptive measure in network analysis is **node degree**, or the number of direct connections a node has. In the network of trade agreements, degree measures the number of agreements a country has with other economies[^5].
 
-[^5]: If a country belongs to a multiparty agreement (e.g. ASEAN), each bilateral partnership (e.g. Singapore-Philippines, Singapore-Malaysia, Singapore-Thailand) is counted as one connection.
+[^5]: If a country belongs to a multiparty agreement (e.g. ASEAN), each bilateral partnership (e.g. Singapore--Philippines, Singapore--Malaysia, Singapore--Thailand) is counted as one connection.
 
 ![](images/01%20map){width="80%" fig-align="center"}
 
-One interesting relationship to look at is the **correlation between the degree of a node and its average depth** – the number of bilateral agreements a country has and how deep these agreements are, on average. The figure below shows a positive correlation between node degree and depth, an indication that well-connected countries are also more likely to sign deep trade agreements.
+One interesting relationship to look at is the **correlation between the node degree and its average depth**; that is, the number of bilateral agreements a country has and how deep these agreements are, on average. The figure below shows a positive correlation, indicating that well-connected countries are also more likely to sign deep trade agreements.
 
 ![](images/03%20correlation){width="80%" fig-align="center"}
 
@@ -77,11 +79,11 @@ The figure below shows the assortativty scores of **full** and **deep** trade ne
 ```
 ###### [Trade agreement formation and the exponential random graph model]{.second-color}
 
-There are ways to empirically test factors that influence trade agreement formation. One of which is the **exponential random graph model**. ERG is a method in network analysis used to determine the **probability of observing a set of links**. The model can be used to study **how similarities in node attributes influence the presence or absence of FTA links**[^6]. Fitting an ERG model is analogous to regression analysis for network data. It provides *coefficients* that measure the likelihood of a link between two countries existing, given a certain feature.
+One way to empirically test factors that influence trade agreement formation is the **exponential random graph model**. ERG is a method in network analysis used to determine the **probability of observing a set of links**. It can be used to study **how similarities in node attributes influence the presence or absence of FTA links**[^6]. Fitting an ERG model is analogous to regression analysis for network data. It provides coefficients that measure the likelihood of a link between two countries existing, given a certain feature.
 
-[^6]: The application of this method to trade agreements was first explored in this <a href= 'https://www.kjis.org/journal/download_pdf.php?spage=263&volume=11&number=2'>publication</a>.
+[^6]: The application of this method to trade agreements was first explored in [Lee and Bai (2013)](https://www.kjis.org/journal/download_pdf.php?spage=263&volume=11&number=2).
 
-The figure below shows the results of ERG models fitted to (1) the **full trade network** -- including both traditional & deep FTAs -- and (2) the **deep trade network** only. The variables on the y-axis are the node features of interest. If the **ERG coefficient is positive, a connection is likely** if two countries have **similar features**. If the **coefficient is negative, a connection is unlikely** if two countries have similar features.
+The figure below shows the results of ERG models fitted to (1) the **full trade network**, including both traditional & deep FTAs, and (2) the **deep trade network** only. The variables on the y-axis are the node features of interest. If the **ERG coefficient is positive, a connection is likely** if two countries have **similar features**. If the **coefficient is negative, a connection is unlikely** if two countries have similar features.
 
 ![](images/04%20coefs){width="80%" fig-align="center"}
 
