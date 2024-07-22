@@ -54,11 +54,29 @@ metrics_mapping = {
     "3. By topic": "topic"
 }
 
-metric = st.sidebar.selectbox('Select metric', list(metrics_mapping.keys()))
+metric = st.selectbox('Select metric', list(metrics_mapping.keys()))
 selected_metric = metrics_mapping[metric]
 
 if selected_metric == 'home':
-    st.write('The **migration sentiment monitor** uses migration-related news articles from the Reuters website.')
+        st.markdown(
+        """
+        <style>
+        .centered {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 20vh;
+        }
+        </style>
+        <div class="centered">
+            <div>
+                <p>The <b>migration sentiment monitor</b> uses migration-related news articles from the Reuters website.</p>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    #st.write('The **migration sentiment monitor** uses migration-related news articles from the Reuters website.')
 
 if selected_metric == 'time':
     st.caption('Figure 1. Migration sentiment scores over time')
