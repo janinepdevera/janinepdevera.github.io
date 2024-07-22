@@ -24,11 +24,11 @@ st.set_page_config(
 
 #st.title('Migration Sentiment Monitor')
 
-with open( "styles.css" ) as css:
+with open( "main/styles.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 with st.spinner('Please wait...'):
-    
+
     # datasets
     if 'results_data' not in st.session_state:
         st.session_state['results_data'] = dataloader.load_data()
