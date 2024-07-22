@@ -29,7 +29,7 @@ def plot_time(daily_df: pd.DataFrame, show_average=False, start_date=None):
         x=daily_df['date'],
         y=daily_df['compound'],
         mode='lines',
-        marker=dict(size=0.7, color='#246781'),
+        marker=dict(size=0.4, color='#246781'),
         name='sentiment score'
     ))
     fig.update_traces(
@@ -37,11 +37,15 @@ def plot_time(daily_df: pd.DataFrame, show_average=False, start_date=None):
         )
 
     if show_average:
+
+        n = len(daily_df['compound'])
+        window_length = min(53, n if n % 2 != 0 else n - 1)
+        smoothed_data = signal.savgol_filter(daily_df['compound'], window_length, 3)
+
         fig.add_trace(go.Scatter(
             x=daily_df['date'],
-            y=signal.savgol_filter(daily_df['compound'],
-                                    53,
-                                    3),
+            y=smoothed_data,
+            #y=signal.savgol_filter(daily_df['compound'], 53, 3),
             mode='lines',
             marker=dict(size=1, color='#CC5638'),
                 name='moving average'
@@ -106,9 +110,9 @@ def plot_topic_scatter(token_df: pd.DataFrame):
         )
     #fig.add_vline(x=0, line_width=1, line_dash="dash", line_color="black")
     fig.update_traces(marker=dict(
-                        size=20, 
+                        size=18, 
                         opacity=0.8, 
-                        line=dict(width=2,
+                        line=dict(width=1.5,
                                   color='black')
                     ),
                   selector=dict(mode='markers'),

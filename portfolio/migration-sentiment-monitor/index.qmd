@@ -1,7 +1,7 @@
 ---
 title: "Migration Sentiment Monitor"
 description: | 
-    I created a web application that tracks the migration related news.
+    I created a web application that tracks sentiment scores in migration related news from Reuters.
 date: 2024-07-13
 format: html
 ---

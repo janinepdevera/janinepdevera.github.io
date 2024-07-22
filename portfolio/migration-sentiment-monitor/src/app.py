@@ -91,7 +91,7 @@ if selected_metric == 'time':
         'Start date: ',
         min_value = datetime(2023, 6, 8),
         max_value = datetime(2024, 7, 13), 
-        value = datetime(2023, 12, 1),
+        value = datetime(2024, 4, 1),
         format = 'MM-DD-YYYY'
     )
     moving_ave = st.checkbox("Show moving average")
