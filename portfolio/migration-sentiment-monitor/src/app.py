@@ -24,7 +24,7 @@ st.set_page_config(
 
 #st.title('Migration Sentiment Monitor')
 
-with open( "main/styles.css" ) as css:
+with open( "./main/styles.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 with st.spinner('Please wait...'):
