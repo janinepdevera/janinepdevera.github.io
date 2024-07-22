@@ -6,3 +6,6 @@ _extensions
 # source code
 /.luarc.json
 website/
+
+# dev notebooks
+/portfolio/migration-sentiment-monitor/src/main/*.ipynb

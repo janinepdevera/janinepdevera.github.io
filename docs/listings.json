@@ -2,6 +2,9 @@
   {
     "listing": "/portfolio.html",
     "items": [
+      "/portfolio/migration-sentiment-monitor/src/main/scraper_dev.html",
+      "/portfolio/migration-sentiment-monitor/src/main/analyzer_dev.html",
+      "/portfolio/migration-sentiment-monitor/index.html",
       "/portfolio/legal-text-classification/index.html",
       "/portfolio/trade-networks/index.html"
     ]

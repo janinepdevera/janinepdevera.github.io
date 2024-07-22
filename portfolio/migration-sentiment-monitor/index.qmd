@@ -1,0 +1,13 @@
+---
+title: "Migration Sentiment Monitor"
+description: | 
+    I build a legal text classifier that correctly identifies up to 98% of paragraphs with potentially problematic provisions.
+date: 2024-07-13
+format: html
+---
+
+<iframe
+  src="https://janinedevera-migration-sentiment-monitor.streamlit.app/?embed=true"
+  style="height: 600px; width: 100%;"
+></iframe>
+
