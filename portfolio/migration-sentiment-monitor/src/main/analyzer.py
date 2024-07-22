@@ -41,7 +41,7 @@ def load_sentiment_analyzer():
     """
     Load NLTK vader sentiment analyzer.
     """
-    nltk_data()
+    #nltk_data()
     sentanalyzer = SentimentIntensityAnalyzer()
     return sentanalyzer
 
