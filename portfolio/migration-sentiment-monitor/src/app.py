@@ -83,7 +83,7 @@ if selected_metric == 'time':
     st.markdown("""
     <style>
     .stSlider [data-baseweb=slider]{
-        width: 25%;
+        width: 40%;
     }
     </style>
     """,unsafe_allow_html=True)
@@ -105,7 +105,7 @@ if selected_metric == 'region':
     st.markdown("""
     <style>
     .stSlider [data-baseweb=slider]{
-        width: 25%;
+        width: 40%;
     }
     </style>
     """,unsafe_allow_html=True)
