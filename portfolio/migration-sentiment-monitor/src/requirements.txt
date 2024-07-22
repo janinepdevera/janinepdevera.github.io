@@ -1,0 +1,17 @@
+requests ~= 2.31.0
+beautifulsoup4 ~= 4.12.3
+pandas == 2.2.0
+numpy == 1.22.4
+matplotlib == 3.5.1
+tqdm
+selenium ~= 4.20
+webdriver_manager
+ipykernel
+nltk
+spacy ~= 3.5.0
+gensim ~= 4.3.2
+textblob
+streamlit ~= 1.36.0
+plotly
+scipy == 1.12.0
+./en_core_web_md-3.7.1-py3-none-any.whl
