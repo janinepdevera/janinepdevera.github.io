@@ -5,6 +5,7 @@ Routines for data processing and sentiment analysis.
 # standard libraries
 import pandas as pd
 import numpy as np
+import os
 from datetime import datetime
 
 # text processing
@@ -26,22 +27,25 @@ def nltk_data():
     """
     Download NLTK data.
     """
-    try:
-        _create_unverified_https_context = ssl._create_unverified_context
-    except AttributeError:
-        pass
-    else:
-        ssl._create_default_https_context = _create_unverified_https_context
+    # try:
+    #     _create_unverified_https_context = ssl._create_unverified_context
+    # except AttributeError:
+    #     pass
+    # else:
+    #     ssl._create_default_https_context = _create_unverified_https_context
 
-    nltk.download('punkt')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('vader_lexicon')
+    # nltk.download('punkt')
+    # nltk.download('averaged_perceptron_tagger')
+    # nltk.download('vader_lexicon')
+
+    nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
+    nltk.download('punkt', download_dir=os.path.join(os.path.dirname(__file__), 'nltk_data'))
 
 def load_sentiment_analyzer():
     """
     Load NLTK vader sentiment analyzer.
     """
-    #nltk_data()
+    nltk_data()
     sentanalyzer = SentimentIntensityAnalyzer()
     return sentanalyzer
 
