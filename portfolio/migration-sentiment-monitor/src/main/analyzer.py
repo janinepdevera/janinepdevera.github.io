@@ -115,7 +115,7 @@ def get_region_df(sentiment_df: pd.DataFrame):
     return region_df
 
 def get_token_df():
-    token_df = pd.read_pickle('./portfolio/migration-sentiment-monitor/src/main/raw_topics.pkl')
+    token_df = pd.read_pickle('./portfolio/migration-sentiment-monitor/src/main/data/raw_topics.pkl')
     return token_df
 
 def get_topic_df(token_df: pd.DataFrame):

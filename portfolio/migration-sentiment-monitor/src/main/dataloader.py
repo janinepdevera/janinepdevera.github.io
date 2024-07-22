@@ -11,7 +11,7 @@ from .scraper import NewsScraper
 
 def load_data():
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, 'raw.csv')
+    file_path = os.path.join(current_dir, 'data/raw.csv')
 
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
