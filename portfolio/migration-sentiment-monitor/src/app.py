@@ -27,6 +27,9 @@ st.set_page_config(
 # with open( "./main/styles.css" ) as css:
 #     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+os.setcwd(current_dir)
+
 with st.spinner('Please wait...'):
 
     # datasets
