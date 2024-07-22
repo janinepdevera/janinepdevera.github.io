@@ -39,7 +39,6 @@ def nltk_data():
     # nltk.download('vader_lexicon')
 
     nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
-    nltk.download('punkt', download_dir=os.path.join(os.path.dirname(__file__), 'nltk_data'))
 
 def load_sentiment_analyzer():
     """
