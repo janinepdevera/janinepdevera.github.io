@@ -8,6 +8,6 @@ format: html
 
 <iframe
   src="https://janinedevera-migration-sentiment-monitor.streamlit.app/?embed=true"
-  style="height: 500px; width: 100%;"
+  style="height: 800px; width: 100%;"
 ></iframe>
 
