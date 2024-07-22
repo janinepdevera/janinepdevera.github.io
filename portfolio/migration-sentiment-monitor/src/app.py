@@ -28,7 +28,7 @@ st.set_page_config(
 #     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-os.setcwd(current_dir)
+os.chdir(current_dir)
 
 with st.spinner('Please wait...'):
 
