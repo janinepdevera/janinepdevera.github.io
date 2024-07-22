@@ -9,3 +9,4 @@ website/
 
 # dev notebooks
 /portfolio/migration-sentiment-monitor/src/main/*.ipynb
+portfolio/migration-sentiment-monitor/src/main/__pycache__/*.pyc
