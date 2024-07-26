@@ -4,7 +4,7 @@ description: |
     I created a web application that tracks sentiment scores in migration related news from Reuters.
 date: 2023-01-13
 format: html
-image: images/thumbnail.gif
+image: images/thumbnail2.gif
 ---
 
 <iframe
